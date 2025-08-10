@@ -35,7 +35,11 @@
         ["eff_mot",        "number", 0.92,      0.70,  0.99],
         ["eff_regen",      "number", 0.80,      0.50,  0.99],
         ["heat_cap_JpK",   "number", 16000,     1000,  100000],
-        ["hA_WpK",         "number", 75,        5,     400]
+        ["hA_WpK",         "number", 75,        5,     400],
+        ["cap_fade_coeff", "number", 0.0,       -0.5,  0.5],   // Capacity fade coefficient
+        ["res_growth_coeff","number", 0.0,      -0.5,  0.5],   // Internal resistance growth coefficient
+        ["ocv_temp_coeff", "number", 0.0,       -0.1,  0.1],   // OCV temperature dependence coefficient
+        ["thermal_res_coeff", "number", 0.0,    0.0,   1.0]    // Additional thermal resistance coefficient
     ],
     "components": {
         "electrics": {

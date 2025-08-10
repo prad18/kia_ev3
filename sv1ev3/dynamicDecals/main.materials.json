@@ -1,0 +1,41 @@
+{
+  "sv1ev3_exterior.dynamicTextures": {
+    "name": "sv1ev3_exterior.skin.dynamicTextures",
+    "mapTo": "sv1ev3_exterior.skin.dynamicTextures",
+    "class": "Material",
+    "Stages": [
+      {
+        "baseColorMap": "/vehicles/sv1ev3/sv1ev3_carpaint_b.color.png",
+        "metallicFactor": 1,
+        "normalMap": "vehicles/sv1ev3/sv1ev3_carpaint_n.normal.png",
+        "roughnessFactor": 0,
+        "useAnisotropic": true
+      },
+      {
+        "clearCoatFactor": 1,
+        "clearCoatRoughnessFactor": 0.06,
+		"baseColorMap": "@DynamicTextureBaseColor",
+		"diffuseMapUseUV": 1,
+        "colorPaletteMap": "@DynamicTextureColorPalette",
+        "colorPaletteMapUseUV": 1,
+        "instanceDiffuse": true,
+		"metallicMap":"@DynamicTextureMetallic",
+		"metallicMapUseUV":1,
+        "metallicFactor": 1,
+        "normalMap": "vehicles/sv1ev3/sv1ev3_carpaint_n.normal.png",
+        "opacityMap": "/vehicles/sv1ev3/sv1ev3_carpaint_c.data.png",
+		"roughnessMap": "@DynamicTextureRoughness",
+		"roughnessMapUseUV": 1,
+        "useAnisotropic": true
+      },
+      {},
+      {}
+    ],
+    "activeLayers": 2,
+    "dynamicCubemap": true,
+    "materialTag0": "beamng",
+    "materialTag1": "vehicle",
+    "order_simset": 0,
+    "version": 1.5
+  },
+}

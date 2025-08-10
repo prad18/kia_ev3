@@ -1,0 +1,28 @@
+{
+  "BoundingBox":[
+    [
+      -0.85,
+      -1.84,
+      -0.228
+    ],
+    [
+      1.17,
+      2.489,
+      1.217
+    ]
+  ],
+  "Config Type":"Service",
+  "Configuration":"Uber Taxi [Busan]",
+  "Description":"Long-range electric Taxi with Uber Taxi Branding",
+  "Drivetrain":"FWD",
+  "Fuel Type":"Battery",
+  "Population":2000,
+  "Power":204,
+  "Propulsion":"Electric",
+  "Torque":283,
+  "Transmission":"Other",
+  "Value":41500,
+  "Weight":1850,
+  "defaultPaintName1":"Snow White Pearl"
+  "defaultPaintName2":"Aurora Black Pearl"
+}

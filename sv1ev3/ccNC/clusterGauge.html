@@ -1,0 +1,393 @@
+<html ng-app="gaugesScreen">
+
+<head>
+  <meta charset="UTF-8">
+  <script>
+    if (typeof beamng !== 'undefined') {
+    } else { // for vueService
+      var beamng = {};
+      beamng.sendEngineLua = function() {};
+    }
+  </script>
+  <!-- VUE START -->
+  <script src="./vue.global.prod.js"></script>
+  <script src="/ui/lib/ext/vue3/vue.global.prod.js"></script>
+  <script src="/ui/lib/ext/vue-i18n-next/vue-i18n.global.prod.js"></script>
+  <script src="/ui/lib/ext/tiny-emitter/tinyemitter.js"></script>
+  <script type="module" src="/ui/lib/int/vueService_mod.js"></script>
+  <!-- VUE END -->
+  <script src="/ui/lib/ext/angular/angular.js"></script>
+  <script src="/ui/lib/ext/hu.js"></script>
+  <script src="clusterGauge.js"></script>
+  <link type="text/css" rel="stylesheet" href="./assets/css/normalize_v801.css">
+  <link type="text/css" rel="stylesheet" href="./assets/css/main.css">
+</head>
+
+<body ng-controller="GaugesScreenController as gaugeCtrl">
+  <div id="app">
+    <div class="Gauge_Container">
+      <div class="Gauge_Left">
+        
+        <div id="NormGauge-L">
+          <svg width="312" height="272" viewBox="0 0 312 272">
+          <!-- 그라데이션 정의 -->
+          <defs>
+              <linearGradient id="NormGauge-L-Gradient" x1="0%" y1="0%" x2="0%" y2="100%">
+              <stop offset="0%" :stop-color="startColor" />
+              <stop offset="100%" :stop-color="endColor" />
+              </linearGradient>
+              <clipPath id="NormGauge-L-Clip">
+              <!-- 사각형의 높이와 위치를 진행률에 맞게 조정 -->
+              <rect 
+                  x="0" 
+                  :y="300 - speedProgress" 
+                  width="500" 
+                  :height="speedProgress"
+              />
+              </clipPath>
+          </defs>
+  
+          <!-- 배경 경로 -->
+          <path
+              class="cls-1"
+              d="M158.4,266.21c-6.01-.09-19.99-.77-27.09-6.25-2.03-1.57-4.99-4.12-7.39-6.25-6.51-5.79-11.01-10.46-12.29-11.78-10.5-10.84-15.45-14.57-35.84-35.21-8.93-9.05-17.7-18.28-35.24-36.76-6.85-7.22-12.53-13.23-16.48-17.43-.38-50.84-.76-101.68-1.14-152.53-3.49,2.33-7.84,5.76-12.07,10.64C5.01,17.38,1.78,24.13,0,28.8v117.28c.67,4.12,2.13,10.21,5.63,16.73,4.51,8.4,10.2,13.39,12.56,15.48,20.49,18.17,46.99,45.77,53.62,52.67,7.95,8.28,16.75,15.76,24.25,24.44,2.79,3.23,5.8,6.89,11.06,10.28,7.61,4.91,15.43,6.33,20.78,6.77h184.17l-5.31-6.06-148.36-.19Z"
+              fill="#2D2D2D"
+          />
+  
+          <!-- 그라데이션 적용된 진행 경로 -->
+          <path
+              class="cls-1"
+              d="M158.4,266.21c-6.01-.09-19.99-.77-27.09-6.25-2.03-1.57-4.99-4.12-7.39-6.25-6.51-5.79-11.01-10.46-12.29-11.78-10.5-10.84-15.45-14.57-35.84-35.21-8.93-9.05-17.7-18.28-35.24-36.76-6.85-7.22-12.53-13.23-16.48-17.43-.38-50.84-.76-101.68-1.14-152.53-3.49,2.33-7.84,5.76-12.07,10.64C5.01,17.38,1.78,24.13,0,28.8v117.28c.67,4.12,2.13,10.21,5.63,16.73,4.51,8.4,10.2,13.39,12.56,15.48,20.49,18.17,46.99,45.77,53.62,52.67,7.95,8.28,16.75,15.76,24.25,24.44,2.79,3.23,5.8,6.89,11.06,10.28,7.61,4.91,15.43,6.33,20.78,6.77h184.17l-5.31-6.06-148.36-.19Z"
+              fill="url(#NormGauge-L-Gradient)"
+              clip-path="url(#NormGauge-L-Clip)"
+          />
+          </svg>
+        </div>
+  
+        <div id="Gauge-Indicator-L">
+          <svg width="191.4" height="169.92" viewBox="0 0 191.4 169.92">
+            <path
+              class="cls-1"
+              d="M.07,123.44c-.05-.38-.07-.75-.07-1.13V9.36h0C0,4.19,4.19,0,9.36,0h133.64c2.48,0,4.86.99,6.62,2.74l39.04,39.04c1.76,1.76,2.74,4.14,2.74,6.62v112.16c0,5.17-4.19,9.36-9.36,9.36H46.6c-2.48,0-4.86-.99-6.62-2.74L2.88,130.08c-1.48-1.48-2.42-3.41-2.67-5.49l-.14-1.15Z"
+              fill="url(#myGradient)"
+              stroke="url(#softStroke)" stroke-width="3" clip-path="url(#innerClip)"
+            />
+          </svg>
+  
+          <span class="Gauge-Indicator-L-Speed">{{speed}}</span>
+          <span class="Gauge-Indicator-L-Desc">km/h</span>
+          
+        </div>
+      
+      </div>
+
+      <div>
+        <img class="Gauge_Center_Test" src="./assets/image/test_cv.png">
+      </div>
+  
+      <div class="Gauge_Right">
+  
+        <div id="NormGauge-R">
+          <svg width="127" height="257" viewBox="0 0 127 257">
+          <!-- 그라데이션 정의 -->
+          <defs>
+              <linearGradient id="NormGauge-R-Gradient" x1="0%" y1="0%" x2="0%" y2="100%">
+              <stop offset="0%" :stop-color="startColor" />
+              <stop offset="100%" :stop-color="endColor" />
+              </linearGradient>
+              <clipPath id="NormGauge-R-Clip">
+              <!-- 사각형의 높이와 위치를 진행률에 맞게 조정 -->
+              <rect 
+                  x="0" 
+                  :y="300 - powerProgress" 
+                  width="500" 
+                  :height="powerProgress"
+              />
+              </clipPath>
+          </defs>
+  
+          <!-- 배경 경로 -->
+          <path 
+              class="cls-1" 
+              d="M104.83,147.46V0c3.63,2.26,9.38,6.49,14.4,13.54,4.61,6.47,6.74,12.69,7.78,16.7.64,20.23,1.09,109.26,0,116.64-1.02,6.86-3.99,13.72-4.03,13.82,0,0,0,0,0,0-5.02,10.3-15.43,18.59-15.43,18.59-7.44,5.92-37.05,35.6-79.03,78.18H0c6.66-6.45,14.84-14.43,24.19-23.62,27.39-26.91,22.47-22.67,32.26-31.97,13.58-12.9,26.17-26.8,39.55-39.9.85-.83,3.3-3.23,5.56-7.04,1.72-2.91,2.7-5.58,3.27-7.49Z"
+              fill="#2D2D2D"
+          />
+  
+          <!-- 그라데이션 적용된 진행 경로 -->
+          <path
+              class="cls-1"
+              d="M104.83,147.46V0c3.63,2.26,9.38,6.49,14.4,13.54,4.61,6.47,6.74,12.69,7.78,16.7.64,20.23,1.09,109.26,0,116.64-1.02,6.86-3.99,13.72-4.03,13.82,0,0,0,0,0,0-5.02,10.3-15.43,18.59-15.43,18.59-7.44,5.92-37.05,35.6-79.03,78.18H0c6.66-6.45,14.84-14.43,24.19-23.62,27.39-26.91,22.47-22.67,32.26-31.97,13.58-12.9,26.17-26.8,39.55-39.9.85-.83,3.3-3.23,5.56-7.04,1.72-2.91,2.7-5.58,3.27-7.49Z"
+              fill="url(#NormGauge-R-Gradient)"
+              clip-path="url(#NormGauge-R-Clip)"
+          />
+          </svg>
+          <span class="Gauge-Indicator-PowerDesc" :style="{ color: powerColor }">POWER</span>
+        </div>
+      
+        <div id="NormGauge-Charge">
+            <svg width="209.62" height="10.94" viewBox="0 0 209.62 10.94">
+                <!-- 그라데이션 정의 -->
+                <defs>
+                    <linearGradient id="gradientFill-R" x1="100%" y1="0%" x2="0%" y2="0%">
+                        <stop offset="0%" :stop-color="endColor" />
+                        <stop offset="100%" :stop-color="startColor" />
+                    </linearGradient>
+                    <clipPath id="progressClip-R">
+                        <!-- 사각형의 너비를 진행률에 맞게 조정 -->
+                        <rect 
+                            :x="209.67 - chargeProgress" 
+                            y="0" 
+                            :width="chargeProgress" 
+                            height="10.9"
+                        />
+                    </clipPath>
+                </defs>
+  
+                <!-- 배경 경로 -->
+                <path
+                    class="cls-1"
+                    d="M5.47,4.9L0,10.94h190.08c2.75-.66,6.41-1.84,10.37-4.03,4.13-2.28,7.16-4.87,9.22-6.91h-29.66c-.94.93-2.17,1.96-3.74,2.88-4.02,2.34-7.96,2.62-10.08,2.59-53.57-.19-107.14-.38-160.7-.58Z"
+                    fill="#2D2D2D"
+                />
+  
+                <!-- 진행 경로 -->
+                <path
+                    class="cls-1"
+                    d="M5.47,4.9L0,10.94h190.08c2.75-.66,6.41-1.84,10.37-4.03,4.13-2.28,7.16-4.87,9.22-6.91h-29.66c-.94.93-2.17,1.96-3.74,2.88-4.02,2.34-7.96,2.62-10.08,2.59-53.57-.19-107.14-.38-160.7-.58Z"
+                    fill="url(#gradientFill-R)"
+                    clip-path="url(#progressClip-R)"
+                />
+            </svg>
+            <span class="Gauge-Indicator-ChargeDesc" :style="{ color: chargeColor }">CHARGE</span>
+        </div>
+  
+        <div id="Gauge-Indicator-R">
+          <svg width="191.4" height="169.92" viewBox="0 0 191.4 169.92">
+            <defs>
+              <clipPath id="innerClip">
+                <!-- 원보다 작은 영역을 클리핑 -->
+                <path d="M.07,123.44c-.05-.38-.07-.75-.07-1.13V9.36h0C0,4.19,4.19,0,9.36,0h133.64c2.48,0,4.86.99,6.62,2.74l39.04,39.04c1.76,1.76,2.74,4.14,2.74,6.62v112.16c0,5.17-4.19,9.36-9.36,9.36H46.6c-2.48,0-4.86-.99-6.62-2.74L2.88,130.08c-1.48-1.48-2.42-3.41-2.67-5.49l-.14-1.15Z"/>
+              </clipPath>
+              <linearGradient id="myGradient" x1="0%" y1="100%" x2="90%" y2="0%">
+                <stop offset="0%" stop-color="#000" />
+                <stop offset="100%" stop-color="#080808" />
+              </linearGradient>
+              <linearGradient id="softStroke" x1="100%" y1="10%" x2="0%" y2="0%">
+                <stop offset="0%" stop-color="transparent" />
+                <stop offset="100%" stop-color="#767676" />
+                <animate attributeName="x1" values="100%; 75%; 50%; 25%; 0%; 25%; 50%; 75%; 100%" dur="3s" repeatCount="1" />
+                <animate attributeName="y1" values="10%;50%;10%" dur="3s" repeatCount="0" />
+                <animate attributeName="x2" values="0%;50%;0%" dur="3s" repeatCount="0" />
+                <animate attributeName="y2" values="0%;50%;0%" dur="3s" repeatCount="0" />
+              </linearGradient>
+            </defs>
+  
+            <g transform="scale(-1, 1) translate(-191.4, 0)">
+              <path
+                class="cls-1"
+                d="M.07,123.44c-.05-.38-.07-.75-.07-1.13V9.36h0C0,4.19,4.19,0,9.36,0h133.64c2.48,0,4.86.99,6.62,2.74l39.04,39.04c1.76,1.76,2.74,4.14,2.74,6.62v112.16c0,5.17-4.19,9.36-9.36,9.36H46.6c-2.48,0-4.86-.99-6.62-2.74L2.88,130.08c-1.48-1.48-2.42-3.41-2.67-5.49l-.14-1.15Z"
+                fill="url(#myGradient)"
+                stroke="url(#softStroke)" stroke-width="3" clip-path="url(#innerClip)"
+              />
+            </g>
+          </svg>
+  
+          <div id="Gauge-Indicator-R-ChargeIcon">
+            <div id="Gauge-Indicator-R-Flex" style="display: flex; align-items: center; justify-content: center;">
+              <svg width="32" height="32" viewBox="0 0 576 512">
+                <path
+                  d="M96 0C78.3 0 64 14.3 64 32l0 96 64 0 0-96c0-17.7-14.3-32-32-32zM288 0c-17.7 0-32 14.3-32 32l0 96 64 0 0-96c0-17.7-14.3-32-32-32zM32 160c-17.7 0-32 14.3-32 32s14.3 32 32 32l0 32c0 77.4 55 142 128 156.8l0 67.2c0 17.7 14.3 32 32 32s32-14.3 32-32l0-67.2c12.3-2.5 24.1-6.4 35.1-11.5c-2.1-10.8-3.1-21.9-3.1-33.3c0-80.3 53.8-148 127.3-169.2c.5-2.2 .7-4.5 .7-6.8c0-17.7-14.3-32-32-32L32 160zM432 512a144 144 0 1 0 0-288 144 144 0 1 0 0 288zm47.9-225c4.3 3.7 5.4 9.9 2.6 14.9L452.4 356l35.6 0c5.2 0 9.8 3.3 11.4 8.2s-.1 10.3-4.2 13.4l-96 72c-4.5 3.4-10.8 3.2-15.1-.6s-5.4-9.9-2.6-14.9L411.6 380 376 380c-5.2 0-9.8-3.3-11.4-8.2s.1-10.3 4.2-13.4l96-72c4.5-3.4 10.8-3.2 15.1 .6z"
+                  fill="#1CAE98"
+                />
+                
+              </svg>
+              <span class="Gauge-Indicator-R-Charge">{{remainingRange}}</span>
+            </div>
+          </div>
+  
+          <span class="Gauge-Indicator-R-Desc">km</span>
+  
+        </div>
+
+      </div>
+
+    </div>
+    <div class="Gauge_Container_Bottom">
+
+      <div class="Gauge_Sub_DriveRange" :style="{ opacity: isGearVisible ? 1 : 0 }">
+        <span class="Gauge_Sub_DriveRange_D" :class="{ active: gear === 'D' }">D</span>
+        <span class="Gauge_Sub_DriveRange_N" :class="{ active: gear === 'N' }">N</span>
+        <span class="Gauge_Sub_DriveRange_R" :class="{ active: gear === 'R' }">R</span>
+        <span class="Gauge_Sub_DriveRange_P" :class="{ active: gear === 'P' }">P</span>
+      </div>
+
+      <div class="Gauge_Battery">
+        <div class="Gauge_Battery_Status_Bar">
+          <div class="Gauge_Battery_Status_Fill" :style="{ width: batteryPercentage + '%' }"></div>
+        </div>
+        <span class="Gauge_Battery_Status_Desc">{{ batteryPercentage }}<span class="Gauge_Battery_Status_Percent">%</span></span>
+      </div>
+
+      <span class="Gauge-Drive-Ready-Desc">READY</span>
+      <span class="Gauge-Gear-Desc" :style="{ color: gear === 'R' ? 'red' : 'white'}">{{ gear }}</span>
+      <span class="Temperature-Desc">-25<span class="Temperature-C">°C</span></span>
+
+      <span class="OBO-Meter">{{ odoMeter }}<span class="OBO-Km">km</span></span>
+    </div>
+  </div>
+</body>
+
+
+<script>
+  
+  var app = Vue.createApp({
+  data() {
+    return {
+      speed: 0, // 현재 속도 (AngularJS에서 전달)
+      gear: 'P',
+      isGearVisible: true, // 기어 표시 상태
+      hideGearTimeout: null,
+      speedProgressV: 0, // 속도 기반 progress 값
+      batteryPercentage: 0,
+      odoMeter: 0,
+      animationProgress: 0, // 애니메이션 progress 값 (0~100)
+      animationInterval: null, // 애니메이션 interval 저장
+      useProgress: true, // true일 경우 progress 사용, false일 경우 속도 기반
+
+      // electricMotorData
+      electricPowerDisplay: 0,
+      remainingRange: 0, // 주행 가능 거리 (km)
+
+      // Theme Color
+      startColor: "#FFF3D8", // 시작 색상
+      endColor: "#FDB927", // 끝 색상
+    };
+  },
+  computed: {
+    chargeProgress() {
+      // CHARGE 상태: electricPowerDisplay < 0 && POWER 상태가 아닐 때만
+      return this.useProgress
+        ? (this.animationProgress / 100) * 209.62 // 애니메이션 진행
+        : this.electricPowerDisplay < 0
+          ? Math.abs(this.electricPowerDisplay) * 209.62 // 데이터 기반 (전력 사용 비율)
+          : 0; // POWER 상태일 때 CHARGE는 0
+    },
+
+    speedProgress() {
+      // 기존 로직 유지: animationProgress 또는 속도 기반
+      return this.useProgress
+        ? (this.animationProgress / 100) * 300 // 애니메이션 진행
+        : (this.speedProgressV / 100) * 300; // 데이터 기반
+    },
+
+    powerProgress() {
+      // POWER 상태: electricPowerDisplay > 0
+      return this.useProgress
+        ? (this.animationProgress / 100) * 300 // 애니메이션 진행
+        : this.electricPowerDisplay > 0
+          ? Math.min(this.electricPowerDisplay, 1) * 300 // 데이터 기반 (최대 100%)
+          : 0; // CHARGE 상태일 때 POWER는 0
+    },
+
+    powerColor() {
+      return this.powerProgress > 0 ? "#F9B628" : "#78490C";
+    },
+
+    chargeColor() {
+      return this.chargeProgress > 0 ? "#1CAE98" : "#2D4444";
+    },
+
+  },
+
+
+  methods: {
+    updateElectricPowerDisplay(value) {
+      this.electricPowerDisplay = value; // AngularJS에서 전달된 값을 업데이트
+    },
+
+    updateGearData(newGear) {
+      if (this.gear === newGear) {
+        return; // 기존 값과 동일하면 처리하지 않음
+      }
+
+      console.log("Gear changed to:", newGear);
+      this.gear = newGear;
+      this.isGearVisible = true;
+
+      if (this.hideGearTimeout) {
+        clearTimeout(this.hideGearTimeout);
+      }
+
+      this.hideGearTimeout = setTimeout(() => {
+        this.isGearVisible = false;
+        console.log("Gear display hidden");
+      }, 1000);
+    },
+
+    updateSpeedData(newSpeed) {
+      this.speed = newSpeed; // AngularJS에서 전달된 속도를 업데이트
+      this.speedProgressV = (newSpeed / 180) * 100; // 속도를 progress 범위(0~100)로 변환 (최대 속도 200km/h 기준)
+    },
+
+    updateOdoMeter(newMeter) {
+      this.odoMeter = newMeter;
+    },
+
+    updateBatteryPercentage(newFuel) {
+      this.batteryPercentage = newFuel;
+    },
+
+    updateRemainingRange(newRange) {
+      this.remainingRange = newRange; // 501km를 최대값으로 제한
+    },
+
+    async startAnimation(maxRate) {
+      let direction = 1; // 증가 방향
+      this.animationProgress = 0; // 애니메이션 시작 시 초기화
+
+      while (true) {
+        this.animationProgress += direction * maxRate;
+
+        if (this.animationProgress >= 100) {
+          direction = -1; // 감소 방향으로 전환
+        }
+
+        if (this.animationProgress <= 0 && direction === -1) {
+          break; // 애니메이션 종료
+        }
+
+        // 애니메이션 속도 설정
+        await new Promise((resolve) => setTimeout(resolve, 10));
+      }
+
+      // 애니메이션 종료 후 속도 기반으로 전환
+      this.useProgress = false;
+    },
+
+    toggleProgressSource() {
+      this.useProgress = !this.useProgress; // progress 기반 또는 속도 기반 전환
+    },
+  },
+  mounted() {
+    // 애니메이션 시작
+    this.startAnimation(1);
+
+    // AngularJS에서 Vue.js 메서드를 호출할 수 있도록 등록
+    window.updateSpeedData = this.updateSpeedData;
+    window.updateGearData = this.updateGearData;
+    window.updateBatteryPercentage = this.updateBatteryPercentage;
+    window.updateOdoMeter = this.updateOdoMeter;
+    window.updateElectricPowerDisplay = this.updateElectricPowerDisplay;
+    window.updateRemainingRange = this.updateRemainingRange;
+  },
+});
+app.mount("#app");
+
+
+
+</script>
+
+
+
+
+</html>

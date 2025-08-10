@@ -1,0 +1,789 @@
+{
+"sv1ev3_dash": {
+    "information":{
+        "authors":"BeamNG",
+        "name":"Dashboard",
+        "value":400,
+    },
+    "slotType" : "sv1ev3_dash",
+    "slots":[
+        ["type", "default", "description"],
+        ["sv1ev3_steer","sv1ev3_steer", "Steering Wheel"],
+        ["sv1ev3_gauges","sv1ev3_gauges", "Gauge", {"coreSlot":true}],
+        ["sv1ev3_console","sv1ev3_console", "Dashboard Console", {"coreSlot":true}],
+        ["soundscape_horn", "soundscape_horn_122", "Horn"],
+        ["sv1ev3_hud", "sv1ev3_hud", "Head-Up Display"],
+    ],
+    "camerasInternal":[
+        ["type", "x", "y", "z", "fov", "id1:", "id2:", "id3:", "id4:", "id5:", "id6:"],
+        {"nodeWeight":1.9},
+        {"beamSpring":800,"beamDamp":120},
+        {"selfCollision":true},
+        {"collision":true},
+        //dash cam
+        ["dash", 0.368, 0.2, 1.275, 55, "f1ll","f2r","f3ll","f4ll","f4r",[], {"beamDeform":5001000,"beamStrength":"FLT_MAX"}],
+    ],
+    "flexbodies": [
+         ["mesh", "[group]:", "nonFlexMaterials"],
+         ["sv1ev3_dashboard", ["sv1ev3_dash", "sv1ev3_body"]],
+         ["sv1ev3_shifter", ["sv1ev3_dash", "sv1ev3_body"]],
+         {"deformGroup":"display_break", "deformMaterialBase":"sv1ev3_gps_screen", "deformMaterialDamaged":"sv1ev3_black"},
+         ["sv1ev3_screens", ["sv1ev3_dash", "sv1ev3_body"]],
+         {"deformGroup":""},
+    ],
+    "controller": [
+        ["fileName"],
+        ["beamNavigator", {"screenMaterialName": "@sv1ev3_nav_screen", "name":"sv1ev3_navi", "htmlFilePath": "local://local/vehicles/sv1ev3/sv1ev3_navi_screen.html", "textureWidth":944, "textureHeight":746}],
+        ["gauges/genericGauges", {"name":"gauge" }],
+        ["gauges/customModules/environmentData"],
+        ["gauges/customModules/combustionEngineData"],
+    ],
+    "glowMap":{
+        "auto_P":{"simpleFunction":"auto_p", "off":"sv1ev3_interior_text", "on":"sv1ev3_interior_text_on"},
+        "auto_R":{"simpleFunction":"auto_r", "off":"sv1ev3_interior_text", "on":"sv1ev3_interior_text_on"},
+        "auto_N":{"simpleFunction":"auto_n", "off":"sv1ev3_interior_text", "on":"sv1ev3_interior_text_on"},
+        "auto_D":{"simpleFunction":"auto_d", "off":"sv1ev3_interior_text", "on":"sv1ev3_interior_text_on"},
+    },
+    "props": [
+        ["func",       "mesh",               "idRef:", "idX:", "idY:",  "baseRotation",            "rotation",               "translation",          "min", "max", "offset", "multiplier"],
+        //steering column controls
+        ["turnsignal", "sv1ev3_signalstalk", "dsh2l",  "dsh2r","dshl", {"x": 10, "y":0, "z":180}, {"x":0, "y":-10, "z":0},  {"x":0, "y":0, "z":0},  -1, 1, -0.0, 1],
+        ["wipers",     "sv1ev3_wiperstalk",  "dsh2l",  "dsh2r","dshl", {"x": 10, "y":0, "z":180}, {"x":0, "y":0, "z":0},    {"x":0, "y":0, "z":0},  -1, 1, -0.8, 1],
+        //pedals
+        ["throttle",   "sv1ev3_pedal_gas",   "f1l","f1r","f6l",         {"x":0, "y":0, "z":180},   {"x":-25, "y":0, "z":0},  {"x":0.0, "y":0, "z":0}, 0, 1, 0,    1],
+        ["brake",     "sv1ev3_pedal_brake",  "f1l","f1r","f6l",         {"x":0, "y":0, "z":180},   {"x":-25, "y":0, "z":0},  {"x":0.0, "y":0, "z":0}, 0, 1, 0,    1],
+    ],
+    "triggers":[
+        ["id", "label", "idRef:", "idX:", "idY:", "type", "size", "baseRotation", "rotation", "translation", "baseTranslation"],
+        ["hazardlight","Hazard Light", "f1r","f1l","f6r", "box", {"x":0.045, "y":0.015, "z":0.025}, {"x":-10, "y":0, "z":0}, {"x":0, "y":0, "z":0}, {"x":0, "y":0, "z":0}, {"x":0.308, "y":0.505, "z":0.47}],
+        ["startup", 	 "Start Up", "f1r","f1l","f6r", "sphere", 0.01, {"x":0.0, "y":0.0, "z":0.0}, {"x":0, "y":0, "z":0}, {"x":0, "y":0, "z":0}, {"x":0.6, "y":0.515, "z":0.57}],
+    ],
+    "triggerEventLinks":[
+        ["triggerId:triggers", "action", "targetEventId:events"],
+        ["startup", "action0", "startup"]
+        ["hazardlight", "action0", "hazardlight"]
+    ],
+    "events":[
+        ["id", "title", "desc"],
+        ["startup", "ui.inputActions.vehicle.toggleIgnitonLevel.title", "ui.inputActions.vehicle.toggleIgnitonLevel.description", {"ctx": "vlua", "onDown"  :"electrics.toggleIgnitionLevelOnDown()", "onUp"  :"electrics.toggleIgnitionLevelOnUp()", "order": 12}]
+        ["hazardlight", "ui.inputActions.vehicle.toggle_hazard_signal.title", "ui.inputActions.vehicle.toggle_hazard_signal.description", {"ctx": "vlua", "onDown"  :"electrics.toggle_warn_signal()", "order": 18}]
+    ],
+    "sounds": {
+        "$+cabinFilterCoef": 0.12
+    },
+    "soundscape": [
+        ["name", "src"],
+        //indicator6,
+        {"node:":"int_strw"},
+        ["indicatorStart", "event:>Vehicle>Interior>Indicator>FIPA_On"],
+        ["indicatorStop", "event:>Vehicle>Interior>Indicator>FIPA_Off"],
+        ["indLoop1", "event:>Vehicle>Interior>Indicator>HUM_Clack"],
+        ["indLoop2", "event:>Vehicle>Interior>Indicator>HUM_Click"],
+        //lights11
+        ["LightOn", "event:>Vehicle>Interior>Light>PETE2_On"],
+        ["LightOff", "event:>Vehicle>Interior>Light>PETE2_Off"],
+        //handbrake2
+        {"node:":"int_pbrk"},
+        ["handbrakeDisengaged","event:>Vehicle>Interior>Handbrake_Electric>Electric_01_Unlock"],
+        ["handbrakeEngaging","event:>Vehicle>Interior>Handbrake_Electric>Electric_01_Lock"],
+        //affects horn location because horn soundscape is loaded after
+        {"node:":"f15"},
+    ],
+    "nodes": [
+         ["id", "posX", "posY", "posZ"],
+         {"collision":true},
+         {"selfCollision":false},
+         {"frictionCoef":0.5},
+         {"nodeMaterial":"|NM_METAL"},
+         //dashboard
+         {"group":"sv1ev3_dash"},
+         {"nodeWeight":15},
+         ["dshr",-0.368,-0.706,1.02],
+         ["dshl",0.368,-0.706,1.02],
+         ["dsh2r",-0.368,-0.646,0.78],
+         ["dsh2l",0.368,-0.646,0.78],
+         ["int_strw",  0.368, -0.452, 0.851],
+         {"group":""},
+         {"nodeWeight":0.2},
+         ["int_pbrk", 0.0, -0.18, 0.59],
+         ["int_shft", 0.0, -0.31, 0.60],
+         {"collision":true},
+         {"selfCollision":true},
+    ],
+    "torsionbars":[
+       ["id1:", "id2:", "id3:", "id4:"],
+        //rigify the column
+        {"spring":20000, "damp":10, "deform":18000, "strength":28000},
+        ["int_strw", "dsh2l", "dsh2r", "f5l"],
+
+    ],
+    "beams":[
+          ["id1:", "id2:"],
+          {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+
+          //--DASHBOARD--
+          {"beamSpring":7001000,"beamDamp":150},
+          {"beamDeform":12000,"beamStrength":"FLT_MAX"},
+          {"deformLimitExpansion":""},
+          {"deformGroup":"display_break","deformationTriggerRatio":0.05},
+          ["dshl", "dshr"],
+          ["dshl", "f6lll"],
+          ["dshr", "f6rrr"],
+          ["dsh2r", "dsh2l"],
+          ["dsh2r", "dshr"],
+          ["dsh2l", "dshl"],
+          ["dsh2l", "f6lll"],
+          ["dsh2r", "f6rrr"],
+          ["dsh2r", "f5r"],
+          ["dsh2l", "f5l"],
+          ["dsh2l", "f5ll"],
+          ["dsh2r", "f5rr"],
+          ["dshr", "f6rr"],
+          ["dshl", "f6ll"],
+          ["dshl", "f6l"],
+          ["dshr", "f6r"],
+          ["f6r", "dshl"],
+          ["dshr", "f6l"],
+          ["dshr", "f5r"],
+          ["dshl", "f5l"],
+          ["dsh2l", "f6l"],
+          ["dsh2r", "f6r"],
+          ["dsh2r", "f5l"],
+          ["dsh2l", "f5r"],
+          ["dsh2r", "dshl"],
+          ["dsh2l", "dshr"],
+          ["dsh2r", "f6rr"],
+          ["dsh2l", "f6ll"],
+          ["dsh2l", "f7"],
+          ["dshr", "f1r"],
+          ["dshl", "f1l"],
+          ["f7", "dsh2r"],
+          ["dsh2r","int_strw"],
+          ["dsh2l","int_strw"],
+          {"beamSpring":160100,"beamDamp":142.73},
+          {"beamDeform":70300,"beamStrength":"FLT_MAX"},
+          ["int_pbrk","f5l"],
+          ["int_pbrk","f5r"],
+          ["int_pbrk","f2r"],
+          ["int_pbrk","f2l"],
+          ["int_shft","f5l"],
+          ["int_shft","f5r"],
+          ["int_shft","f2r"],
+          ["int_shft","f2l"],
+          {"deformGroup":""},
+          {"beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+          {"deformLimitExpansion":""},
+    ],
+    "triangles":[
+        ["id1:", "id2:", "id3:"],
+        {"groundModel":"plastic"},
+        //Dashboard
+        {"dragCoef":0},
+        ["f5rr", "f6rrr", "dsh2r"],
+        ["f5rr", "dsh2r", "f5r"],
+        ["f5ll", "dsh2l", "f6lll"],
+        ["f5ll", "f5l", "dsh2l"],
+        ["f6rrr", "f6rr", "f6r"],
+        ["f6rrr", "f6r", "dshr"],
+        ["f6lll", "f6l", "f6ll"],
+        ["f6lll", "dshl", "f6l"],
+        ["f6r", "f6l", "dshl"],
+        ["f6r", "dshl", "dshr"],
+        ["dshl", "f6lll", "dsh2l"],
+        ["dshr", "dsh2r", "f6rrr"],
+        ["dshr", "dshl", "dsh2l"],
+        ["dshr", "dsh2l", "dsh2r"],
+        ["dsh2r", "dsh2l", "f5l"],
+        ["dsh2r", "f5l", "f5r"],
+    ],
+},
+"sv1ev3_console": {
+    "information":{
+        "authors":"BeamNG",
+        "name":"Dashboard Console",
+        "value":500,
+    },
+    "slotType" : "sv1ev3_console",
+    "flexbodies": [
+         ["mesh", "[group]:", "nonFlexMaterials"],
+         ["sv1ev3_console", ["sv1ev3_dash", "sv1ev3_body"]],
+         ["sv1ev3_console_top", ["sv1ev3_dash", "sv1ev3_body"]],
+    ],
+},
+"sv1ev3_hud": {
+    "information":{
+        "authors":"BeamNG",
+        "name":"Head-Up Display",
+        "value":500,
+    },
+    "slotType" : "sv1ev3_hud",
+    "flexbodies": [
+         ["mesh", "[group]:", "nonFlexMaterials"],
+         {"deformGroup":"display_break", "deformMaterialBase":"sv1ev3_hud_screen", "deformMaterialDamaged":"invis"},
+         ["sv1ev3_hud", ["sv1ev3_dash", "sv1ev3_body"]],
+         {"deformGroup":""},
+    ],
+    "controller": [
+        ["fileName"],
+        ["gauges/genericGauges", {"name":"hud" }],
+        ["gauges/customModules/environmentData"],
+        ["gauges/customModules/combustionEngineData"],
+    ],
+    "hud": {
+        "configuration": {
+            "materialName": "@sv1ev3_hud_screen"
+            "htmlPath": "local://local/vehicles/sv1ev3/hud/gauges_screen.html"
+            "displayWidth":512
+            "displayHeight":256
+        }
+        "displayData": {
+            "electrics": [
+                "signal_L",
+                "signal_R",
+                "lights",
+                "highbeam",
+                "fog",
+                "lowpressure",
+                "lowfuel",
+                "parkingbrake",
+                "checkengine",
+                "gear",//
+                "fuel",
+                "wheelspeed",//
+                "esc",
+                "escActive",
+                "tcs",
+                "tcsActive",
+                "odometer",
+                "trip"
+            ]
+            "powertrain": [
+                ["deviceName", "property"]
+                //["mainEngine", "outputTorque1"]
+                //["mainEngine", "outputAV1"]
+                //["gearbox", "outputAV1"]
+            ]
+            "customModules": [
+                ["moduleName", "property"]
+                ["combustionEngineData", "fuelDisplay"]
+                ["combustionEngineData", "fuelConsumption"]
+                ["environmentData", "temperatureEnv"]
+                ["environmentData", "time"]
+            ]
+        }
+    },
+},
+"sv1ev3_sliding_console": {
+    "information":{
+        "authors":"BeamNG",
+        "name":"Sliding Console Table",
+        "value":500,
+    },
+    "slotType" : "sv1ev3_console",
+    "flexbodies": [
+         ["mesh", "[group]:", "nonFlexMaterials"],
+         ["sv1ev3_sliding_console", ["sv1ev3_dash", "sv1ev3_body"]],
+         ["sv1ev3_console_top", ["sv1ev3_dash", "sv1ev3_body"]],
+         ["sv1ev3_sliding_console_table", ["sv1ev3_table"]],
+    ],
+    "triggers":[
+        ["id", "label", "idRef:", "idX:", "idY:", "type", "size", "baseRotation", "rotation", "translation", "baseTranslation"],
+        ["table", "Sliding Table", "tab1l","tab1r","tab2r", "box", {"x":0.11, "y":-0.02, "z":0.09}, {"x":-3, "y":0, "z":0}, {"x":0, "y":0, "z":0}, {"x":0, "y":0, "z":0}, {"x":0.045, "y":-0.03, "z":0.0}],
+    ],
+    "triggerEventLinks":[
+        ["triggerId:triggers", "action", "targetEventId:events"],
+        ["table", "action0", "table"],
+    ],
+    "events":[
+        ["id", "title", "desc"],
+        ["table", "", "", {"onUp":"electrics.values.table = 1-(electrics.values.table or 0)", "order": 2}]
+    ],
+    "rails": {
+        "table_L":{"links:":["tara1l", "tara2l"], "broken:":[], "looped":false, "capped":true},
+        "table_R":{"links:":["tara1r", "tara2r"], "broken:":[], "looped":false, "capped":true},
+    },
+    "slidenodes": [
+        ["id:", "railName", "attached", "fixToRail", "tolerance", "spring", "strength", "capStrength"],
+        ["tabrc1l", "table_L", true, true, 0.0, 5001000, "FLT_MAX", "FLT_MAX"],
+        ["tabrc2l", "table_L", true, true, 0.0, 5001000, "FLT_MAX", "FLT_MAX"],
+        ["tabrc1r", "table_R", true, true, 0.0, 5001000, "FLT_MAX", "FLT_MAX"],
+        ["tabrc2r", "table_R", true, true, 0.0, 5001000, "FLT_MAX", "FLT_MAX"],
+    ],
+    "nodes": [
+        ["id", "posX", "posY", "posZ"],
+        {"group":"sv1ev3_table"},
+        {"collision":true},
+        {"selfCollision":true},
+        {"nodeMaterial":"|NM_PLASTIC"},
+        {"frictionCoef":0.7},
+        {"nodeWeight":1.0},
+        ["tab1l", 0.089, -0.251, 0.771],
+        ["tab1r", -0.089, -0.251, 0.771],
+        ["tab2l", 0.089, 0.145, 0.771],
+        ["tab2r", -0.089, 0.145, 0.771],
+
+        {"group":""},
+        ["tabrc1l", 0.089, -0.122, 0.721],
+        ["tabrc1r", -0.089, -0.122, 0.721],
+        ["tabrc2l", 0.089, 0.007, 0.721],
+        ["tabrc2r", -0.089, 0.007, 0.721],
+
+        ["tara1l", 0.089, -0.251, 0.721],
+        ["tara1r", -0.089, -0.251, 0.721],
+        ["tara2l", 0.089, 0.145, 0.721],
+        ["tara2r", -0.089, 0.145, 0.721],
+        {"group":""},
+
+        {"collision":false},
+        {"selfCollision":false},
+        ["tabmocl", 0.089, 0.1992, 0.771],
+        ["tabmocr", -0.089, 0.1992, 0.771],
+
+        //rigidifier
+        {"group":""},
+        {"collision":false},
+        {"selfCollision":false},
+        ["tab3", 0, -0.044, 0.688],
+        {"group":""},
+   ],
+   "beams": [
+    ["id1:", "id2:"],
+    {"beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+    {"beamSpring":751000,"beamDamp":50},
+    {"beamDeform":16000,"beamStrength":"FLT_MAX"},
+        ["tab1l","tab2l"],
+        ["tab2l","tab2r"],
+        ["tab1r","tab2r"],
+        ["tab1l","tab1r"],
+        ["tab1l","tab2r"],
+        ["tab1r","tab2l"],
+
+        {"beamDeform":6500,"beamStrength":126500},
+        //table break
+        {"breakGroup":"table_rail"},
+        ["tab1l","tabrc1l"],
+        ["tab2l","tabrc2l"],
+        ["tab1l","tabrc2l"],
+        ["tab2l","tabrc1l"],
+        ["tab2r","tabrc2r"],
+        ["tab1r","tabrc2r"],
+        ["tab1r","tabrc1r"],
+        ["tab2r","tabrc1r"],
+
+        ["tab2l","tabrc2r"],
+        ["tab1l","tabrc1r"],
+        ["tab2r","tabrc2l"],
+        ["tab1r","tabrc1l"],
+        {"breakGroup":""},
+        {"deformGroup":""},
+        
+        //rigidifier
+        {"beamDeform":4000,"beamStrength":36000},
+        ["tab2l","tab3"],
+        ["tab1l","tab3"],
+        ["tab1r","tab3"],
+        ["tab2r","tab3"],
+
+        //rail
+        {"beamDeform":6500,"beamStrength":126500},
+        ["tara1r","tara2r"],
+        ["tara1l","tara2l"],
+
+        //to body
+        {"beamSpring":201000,"beamDamp":100},
+        {"beamDeform":3460,"beamStrength":3700},
+        ["tara1r","f2r"],
+        ["tara1l","f2l"],
+        ["tara2r","f3r"],
+        ["tara2l","f3l"],
+
+        ["tara1r","f3r"],
+        ["tara1l","f3l"],
+        ["tara2r","f2r"],
+        ["tara2l","f2l"],
+
+        ["tara1r","f2l"],
+        ["tara1l","f2r"],
+        ["tara2r","f3l"],
+        ["tara2l","f3r"],
+
+        ["tabmocl","f2l"],
+        ["tabmocr","f2r"],
+        ["tabmocl","f2r"],
+        ["tabmocr","f2l"],
+
+        ["tabmocl","f3l"],
+        ["tabmocr","f3r"],
+        ["tabmocl","f3r"],
+        ["tabmocr","f3l"],
+        {"deformGroup":""},
+
+    ],
+    "triangles": [
+        ["id1:","id2:","id3:"],
+        {"dragCoef":10},
+        {"groundModel":"plastic"},
+        {"group":"sv1ev3_table"},
+        ["tab1l","tab2r","tab1r"],
+        ["tab1l","tab2l","tab2r"],
+        {"group":""},
+    ],
+    "hydros": [
+        ["id1:","id2:"],
+        {"beamDeform":55500,"beamStrength":145000},
+        {"beamSpring":1183050,"beamDamp":150},
+        {"breakGroupType":1},
+        {"breakGroup":["table_break"]},
+        ["tab1l","tabmocl", {"inputSource":"table","inLimit":0,"outLimit":1.25,"inRate":0.3,"outRate":0.3,"inputFactor":1}],
+        ["tab1r","tabmocr", {"inputSource":"table","inLimit":0,"outLimit":1.25,"inRate":0.3,"outRate":0.3,"inputFactor":1}],
+        {"breakGroupType":0},
+        {"breakGroup":""},
+    ],
+},
+"sv1ev3_seat_FL": {
+    "information":{
+        "authors":"BeamNG",
+        "name":"Driver Seat",
+        "value":500,
+    },
+    "slotType" : "sv1ev3_seat_FL",
+    "flexbodies": [
+         ["mesh", "[group]:", "nonFlexMaterials"],
+         ["sv1ev3_seat_FL", ["sv1ev3_floor","sv1ev3_seat_FL"]],
+    ],
+    "nodes": [
+         ["id", "posX", "posY", "posZ"],
+         {"collision":true},
+         {"selfCollision":true},
+         {"frictionCoef":0.5},
+         {"nodeMaterial":"|NM_METAL"},
+         //seats flexbody
+         {"group":"sv1ev3_seat_FL"},
+         {"nodeWeight":5.0},
+         ["sf1l", 0.12, -0.3729, 0.6545],
+         ["sf1ll", 0.651, -0.3729, 0.6545],
+         ["sf2l", 0.13, 0.113, 0.5845],
+         ["sf2ll", 0.6405, 0.113, 0.5845],
+         ["sf3l", 0.22, 0.3369, 1.3788],
+         ["sf3ll", 0.5355, 0.3369, 1.3788],
+         {"group":""},
+    ],
+    "beams":[
+        ["id1:", "id2:"],
+        {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+        //main shape
+        {"beamSpring":2501000,"beamDamp":300},
+        {"beamDeform":20000,"beamStrength":"FLT_MAX"},
+        {"deformLimitExpansion":1.2},
+        ["sf1l", "sf1ll"],
+        ["sf2l", "sf2ll"],
+        ["sf3l", "sf3ll"],
+        ["sf1l", "sf2l"],
+        ["sf2l", "sf3l"],
+        ["sf1ll", "sf2ll"],
+        ["sf2ll", "sf3ll"],
+        //crossing
+        {"beamDeform":17000,"beamStrength":"FLT_MAX"},
+        {"deformLimitExpansion":""},
+        ["sf1ll", "sf2l"],
+        ["sf2ll", "sf1l"],
+        ["sf2l", "sf3ll"],
+        ["sf3l", "sf2ll"],
+        //corners
+        {"beamDeform":3000},
+        ["sf3l", "sf1l"],
+        ["sf3ll", "sf1ll"],
+
+        //damper
+        {"beamSpring":0,"beamDamp":800},
+        ["sf3ll", "r3ll"],
+        ["sf3l", "r3ll"],
+
+        //attach
+        {"beamSpring":282000,"beamDamp":37.6},
+        {"beamDeform":6000,"beamStrength":"FLT_MAX"},
+        ["sf2l", "f3l"],
+        ["sf2l", "f2l"],
+        ["sf2l", "f3r"],
+        ["sf2l", "f2r"],
+
+        ["sf2ll", "f3l"],
+        ["sf2ll", "f3ll"],
+        ["sf2ll", "f2l"],
+        ["sf1l", "f2l"],
+        ["sf1ll", "f2l"],
+        ["sf1ll", "f2ll"],
+        ["sf1l", "f3l"],
+
+        //limiter
+        {"beamType":"|SUPPORT", "beamLongBound":5},
+        {"beamSpring":470000,"beamDamp":141},
+        {"beamPrecompression":0.9},
+        {"beamDeform":6000,"beamStrength":"FLT_MAX"},
+        {"optional":true},
+        ["sf3l", "rf2l"],
+        ["sf3l", "p8l"],
+        ["sf3l", "p7l"],
+        ["sf2l", "f8ll"],
+        ["sf1l", "f7ll"],
+        //to other seat
+        {"beamPrecompression":0.7},
+        ["sf1rr", "sf1ll"],
+        ["sf2rr", "sf2ll"],
+        ["sf3rr", "sf3ll"],
+        {"optional":false},
+        {"beamPrecompression":1},
+
+        {"beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+        {"deformLimitExpansion":""},
+    ],
+    "triangles":[
+        ["id1:", "id2:", "id3:"],
+        {"groundModel":"metal"},
+        {"dragCoef":0},
+        //front seat
+        ["sf2l",  "sf1l",  "sf1ll"],
+        ["sf1ll", "sf2ll", "sf2l"],
+        ["sf3l",  "sf2l",  "sf2ll"],
+        ["sf2ll", "sf3ll", "sf3l"],
+    ],
+},
+"sv1ev3_seat_FR": {
+    "information":{
+        "authors":"BeamNG",
+        "name":"Passenger Seat",
+        "value":500,
+    },
+    "slotType" : "sv1ev3_seat_FR",
+    "flexbodies": [
+         ["mesh", "[group]:", "nonFlexMaterials"],
+         ["sv1ev3_seat_FR", ["sv1ev3_floor","sv1ev3_seat_FR"],[]],
+    ],
+    "nodes": [
+         ["id", "posX", "posY", "posZ"],
+         {"collision":true},
+         {"selfCollision":true},
+         {"frictionCoef":0.5},
+         {"nodeMaterial":"|NM_METAL"},
+         //seats flexbody
+         {"group":"sv1ev3_seat_FR"},
+         {"nodeWeight":5.0},
+         ["sf1r", -0.12, -0.3729, 0.6545],
+         ["sf1rr", -0.651, -0.3729, 0.6545],
+         ["sf2r", -0.13, 0.113, 0.5845],
+         ["sf2rr", -0.6405, 0.113, 0.5845],
+         ["sf3r", -0.22, 0.3369, 1.3788],
+         ["sf3rr", -0.5355, 0.3369, 1.3788],
+         {"group":""},
+    ],
+    "beams":[
+        ["id1:", "id2:"],
+        {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+        //main shape
+        {"beamSpring":2501000,"beamDamp":300},
+        {"beamDeform":20000,"beamStrength":"FLT_MAX"},
+        {"deformLimitExpansion":1.2},
+        ["sf1r", "sf1rr"],
+        ["sf2r", "sf2rr"],
+        ["sf3r", "sf3rr"],
+        ["sf1r", "sf2r"],
+        ["sf2r", "sf3r"],
+        ["sf1rr", "sf2rr"],
+        ["sf2rr", "sf3rr"],
+        //crossing
+        {"beamDeform":17000,"beamStrength":"FLT_MAX"},
+        {"deformLimitExpansion":""},
+        ["sf1rr", "sf2r"],
+        ["sf2rr", "sf1r"],
+        ["sf2r", "sf3rr"],
+        ["sf3r", "sf2rr"],
+        //corners
+        {"beamDeform":3000},
+        ["sf3r", "sf1r"],
+        ["sf3rr", "sf1rr"],
+
+        //damper
+        {"beamSpring":0,"beamDamp":800},
+        ["sf3rr", "r3rr"],
+        ["sf3r", "r3rr"],
+
+        //attach
+        {"beamSpring":282000,"beamDamp":37.6},
+        {"beamDeform":6000,"beamStrength":"FLT_MAX"},
+        ["sf2r", "f3l"],
+        ["sf2r", "f2l"],
+        ["sf2r", "f3r"],
+        ["sf2r", "f2r"],
+
+        ["sf2rr", "f3r"],
+        ["sf2rr", "f3rr"],
+        ["sf2rr", "f2r"],
+        ["sf1r", "f2r"],
+        ["sf1rr", "f2r"],
+        ["sf1rr", "f2rr"],
+        ["sf1r", "f3r"],
+
+        //limiter
+        {"beamType":"|SUPPORT", "beamLongBound":5},
+        {"beamSpring":470000,"beamDamp":141},
+        {"beamPrecompression":0.9},
+        {"beamDeform":6000,"beamStrength":"FLT_MAX"},
+        {"optional":true},
+        ["sf3r", "rf2r"],
+        ["sf3r", "p8r"],
+        ["sf3r", "p7r"],
+        ["sf2r", "f8rr"],
+        ["sf1r", "f7rr"],
+        //to other seat
+        {"beamPrecompression":0.7},
+        //["sf1rr", "sf1ll"],
+        //["sf2rr", "sf2ll"],
+        //["sf3rr", "sf3ll"],
+        {"optional":false},
+        {"beamPrecompression":1},
+
+        {"beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+        {"deformLimitExpansion":""},
+    ],
+    "triangles":[
+        ["id1:", "id2:", "id3:"],
+        {"groundModel":"metal"},
+        {"dragCoef":0},
+        //front seat
+        ["sf1r", "sf2r", "sf1rr"],
+        ["sf2rr", "sf1rr", "sf2r"],
+        ["sf2r", "sf3r", "sf2rr"],
+        ["sf3rr", "sf2rr", "sf3r"],
+    ],
+},
+"sv1ev3_seats_R":{
+    "information":{
+        "authors":"BeamNG",
+        "name":"Rear Seats",
+        "value":600,
+    },
+    "slotType" : "sv1ev3_seats_R",
+    "flexbodies":[
+        ["mesh", "[group]:", "nonFlexMaterials"],
+        ["sv1ev3_seats_R", ["sv1ev3_floor","sv1ev3_seats_R"]],
+    ],
+    "nodes":[
+          ["id", "posX", "posY", "posZ"],
+          {"group":"sv1ev3_seats_R"},
+          {"collision":true},
+          {"selfCollision":true},
+          {"nodeWeight":3.3},
+          ["sr1rr", -0.61, 0.5145, 0.6642],
+          ["sr1", 0.0000, 0.5145, 0.6642],
+          ["sr1ll", 0.61, 0.5145, 0.6642],
+
+          ["sr2rr", -0.54, 0.9449, 0.6159],
+          ["sr2", 0.0000, 0.9449, 0.6159],
+          ["sr2ll", 0.54, 0.9449, 0.6159],
+
+          ["sr3rr", -0.59, 1.2638, 1.3086],
+          ["sr3", 0.0000, 1.2638, 1.3086],
+          ["sr3ll", 0.59, 1.2638, 1.3086],
+          {"group":""},
+    ],
+    "beams":[
+          ["id1:", "id2:"],
+          {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+          //main shape
+          {"beamSpring":2501000,"beamDamp":300},
+          {"beamDeform":20000,"beamStrength":"FLT_MAX"},
+          {"deformLimitExpansion":1.2},
+          ["sr3rr", "sr3"],
+          ["sr3", "sr3ll"],
+          ["sr2rr", "sr2"],
+          ["sr2", "sr2ll"],
+          ["sr1ll", "sr1"],
+          ["sr1", "sr1rr"],
+          ["sr2rr", "sr3rr"],
+          ["sr3", "sr2"],
+          ["sr3ll", "sr2ll"],
+          ["sr2ll", "sr1ll"],
+          ["sr1", "sr2"],
+          ["sr1rr", "sr2rr"],
+          //crossing
+          {"beamDeform":17000,"beamStrength":"FLT_MAX"},
+          {"deformLimitExpansion":""},
+          ["sr3", "sr2ll"],
+          ["sr2", "sr3ll"],
+          ["sr3", "sr2rr"],
+          ["sr2", "sr3rr"],
+          ["sr1", "sr2rr"],
+          ["sr2", "sr1rr"],
+          ["sr1", "sr2ll"],
+          ["sr2", "sr1ll"],
+          //corner
+          {"beamDeform":3000,"beamStrength":"FLT_MAX"},
+          ["sr3rr", "sr1rr"],
+          ["sr3", "sr1"],
+          ["sr3ll", "sr1ll"],
+
+          //damper
+          {"beamSpring":0,"beamDamp":800},
+          ["sr3ll", "r4ll"],
+          ["sr3rr", "r4rr"],
+          ["sr3", "r4rr"],
+          ["sr3", "r4ll"],
+
+          //attach
+          {"beamSpring":282000,"beamDamp":37.6},
+          {"beamDeform":6000,"beamStrength":"FLT_MAX"},
+          ["sr2rr", "f4r"],
+          ["sr2rr", "f4rr"],
+          ["sr2rr", "f3r"],
+          ["sr1rr", "f3r"],
+          ["sr1rr", "f4r"],
+          ["sr1rr", "f3rr"],
+
+          ["sr2ll", "f4l"],
+          ["sr2ll", "f4ll"],
+          ["sr2ll", "f3l"],
+          ["sr1ll", "f3l"],
+          ["sr1ll", "f4l"],
+          ["sr1ll", "f3ll"],
+
+          ["sr2", "f4r"],
+          ["sr2", "f4l"],
+          ["sr2", "f3r"],
+          ["sr2", "f3l"],
+          ["sr1", "f3r"],
+          ["sr1", "f3l"],
+          ["sr1", "f4l"],
+          ["sr1", "f4r"],
+
+          //limiter
+          {"beamType":"|SUPPORT", "beamLongBound":5},
+          {"beamSpring":470000,"beamDamp":141},
+          {"beamPrecompression":0.9},
+          {"beamDeform":6000,"beamStrength":"FLT_MAX"},
+          {"optional":true},
+          ["sr1", "f8rr"],
+          ["sr1", "f8ll"],
+          ["sr2", "f9rr"],
+          ["sr2", "f9ll"],
+          ["sr3", "q1l"],
+          ["sr3", "q1r"],
+          {"optional":false},
+          {"beamPrecompression":1},
+          {"beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+          {"deformLimitExpansion":1.2},
+    ],
+    "triangles":[
+        ["id1:", "id2:", "id3:"],
+        {"groundModel":"metal"},
+        {"dragCoef":0},
+        ["sr3rr", "sr2rr", "sr2"],
+        ["sr2", "sr3", "sr3rr"],
+        ["sr2rr", "sr1rr", "sr1"],
+        ["sr1", "sr2", "sr2rr"],
+        ["sr2", "sr1", "sr1ll"],
+        ["sr1ll", "sr2ll", "sr2"],
+        ["sr2ll", "sr3ll", "sr3"],
+        ["sr3", "sr2", "sr2ll"],
+    ],
+},
+}

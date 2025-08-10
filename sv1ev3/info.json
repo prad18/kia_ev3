@@ -1,0 +1,101 @@
+{
+  "Author":"Docroswagge",
+  "Body Style":"SUV",
+  "Brand":"Kia",
+  "Country":"South Korea",
+  "Derby Class":"Compact Car",
+  "Name":"EV3 (SV1)",
+  "Type":"Car",
+  "Years":{
+    "max":2024,
+    "min":2024
+  },
+  "defaultPaintName1":"Aventurine Green",
+  "default_pc":"earth_81kwh",
+  "paints":{
+    "Snow White Pearl":{
+      "baseColor":[
+        0.97,
+        0.98,
+        0.95,
+        1.2
+      ],
+      "clearcoat":1,
+      "clearcoatRoughness":0.03,
+      "metallic":0.5,
+      "roughness":0.5
+    },
+    "Aurora Black Pearl":{
+      "baseColor":[
+        0.01,
+        0.01,
+        0.04,
+        1.45
+      ],
+      "clearcoat":1,
+      "clearcoatRoughness":0.03,
+      "metallic":1,
+      "roughness":1
+    },
+    "Frost Blue":{
+      "baseColor":[
+        0.49,
+        0.65,
+        0.76,
+        1.65
+      ],
+      "clearcoat":1,
+      "clearcoatRoughness":0.03,
+      "metallic":0.52,
+      "roughness":0.58
+    },
+    "Aventurine Green":{
+      "baseColor":[
+        0.49,
+        0.58,
+        0.52,
+        1.65
+      ],
+      "clearcoat":1,
+      "clearcoatRoughness":0.03,
+      "metallic":0.52,
+      "roughness":0.58
+    },
+    "Shale Grey":{
+      "baseColor":[
+        0.31,
+        0.31,
+        0.31,
+        1.65
+      ],
+      "clearcoat":1,
+      "clearcoatRoughness":0.03,
+      "metallic":0.52,
+      "roughness":0.58
+    },
+    "Ivory Silver":{
+      "baseColor":[
+        0.56,
+        0.57,
+        0.55,
+        1.65
+      ],
+      "clearcoat":1,
+      "clearcoatRoughness":0.03,
+      "metallic":0.52,
+      "roughness":0.58
+    },
+    "Ivory Matt Silver":{
+      "baseColor":[
+        0.56,
+        0.57,
+        0.55,
+        1.65
+      ],
+      "clearcoat":0,
+      "clearcoatRoughness":0.03,
+      "metallic":0,
+      "roughness":1
+      }
+  }
+}

@@ -1,0 +1,13 @@
+{
+"sv1ev3_skin_dynamicTextures": {
+    "information":{
+        "authors":"BeamNG",
+        "name":"Dynamic Textures",
+        "isAuxiliary": true,
+        "value":1350
+    },
+    "slotType" : "paint_design",
+    "dynDecalMaterials": ["sv1ev3_exterior"],
+    "globalSkin" : "dynamicTextures"
+  },
+}

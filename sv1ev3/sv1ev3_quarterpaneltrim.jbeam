@@ -1,0 +1,26 @@
+{
+"sv1ev3_quarterpanel": {
+    "information":{
+        "authors":"BeamNG",
+        "name":"Quarter Panel Trim",
+        "value":120,
+    },
+    "slotType" : "sv1ev3_quarterpaneltrim",
+    "flexbodies": [
+         ["mesh", "[group]:", "nonFlexMaterials"],
+         ["sv1ev3_quarterpaneltrim", ["sv1ev3_body"]],
+    ],
+},
+"sv1ev3_quarterpanel_gtline": {
+    "information":{
+        "authors":"BeamNG",
+        "name":"GT-line Quarter Panel Trim",
+        "value":120,
+    },
+    "slotType" : "sv1ev3_quarterpaneltrim",
+    "flexbodies": [
+         ["mesh", "[group]:", "nonFlexMaterials"],
+         ["sv1ev3_quarterpaneltrim_gtline", ["sv1ev3_body"]],
+    ],
+},
+}

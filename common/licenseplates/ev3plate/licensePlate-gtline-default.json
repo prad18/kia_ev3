@@ -1,0 +1,39 @@
+{
+  "name": "Default",
+  "version": 2,
+  "data": {
+    "gen":{
+
+      "pattern" : ["BNG*%c%c%D%d%d","BNG*%c%D%d%d%d","BNG*%c%c%D%d"],
+      "patternData":{ "nb":["t1","t2","t3"]}
+    },
+    "format": {
+      "52-11": { 
+        "size": {
+          "x": 1024,
+          "y": 196
+        },
+        "text": {
+          "x": 0.54,
+          "y": 0.45,
+          "scale": 0,
+          "color": "black",
+          "limit": 9
+        },
+        "diffuse": {
+          "spriteImg": "vehicles/common/licenseplates/driver_training/platefont_FE_d.png",
+          "backgroundImg" : "vehicles/common/licenseplates/ev3plate/ev3gtlineplate.png",
+          "fillStyle": "white"
+        },
+        "bump": {
+          "spriteImg": "vehicles/common/licenseplates/driver_training/platefont_FE_n.png",
+          "backgroundImg": "vehicles/common/licenseplates/driver_training/license_plate_german_new_wide_n.png",
+          "fillStyle": "rgb(0,0,255)"
+        },
+        "specular": {
+          "fillStyle": "rgb(233,233,233)"
+        }
+      }
+    }
+  }
+}

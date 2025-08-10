@@ -1,0 +1,26 @@
+{
+"sv1ev3_licenseplate_F": {
+    "information":{
+        "authors":"BeamNG",
+        "name":"Front License Plate",
+        "value":0,
+    },
+    "slotType" : "sv1ev3_licenseplate_F",
+    "flexbodies": [
+         ["mesh", "[group]:", "nonFlexMaterials"],
+         ["licenseplate", ["sv1ev3_bumper_F"],[],{"pos":{"x":0.0, "y":-2.150, "z":0.491}, "rot":{"x":-1.9, "y":0, "z":0}, "scale":{"x":1, "y":1, "z":1}}],
+    ],
+},
+"sv1ev3_licenseplate_R": {
+    "information":{
+        "authors":"BeamNG",
+        "name":"Rear License Plate",
+        "value":0,
+    },
+    "slotType" : "sv1ev3_licenseplate_R",
+    "flexbodies": [
+         ["mesh", "[group]:", "nonFlexMaterials"],
+         ["licenseplate", ["sv1ev3_bumper_R"],[],{"pos":{"x":0.0, "y":2.122, "z":0.498}, "rot":{"x":16, "y":0, "z":180}, "scale":{"x":1, "y":1, "z":1}}],
+    ],
+},
+}

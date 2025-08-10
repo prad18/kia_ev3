@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8"/>
+  <link rel="stylesheet" type="text/css" href="/ui/ui-vue/src/styles/other/navigator.css" />
+</head>
+
+<body>
+  <div id="bootscreen"></div>
+  <div style="height: 100%; width: 100%; position: relative;">
+    <div style="width: 100%; height: 100%; z-index:1; position: absolute;">
+		<img class="bootscreen" src="ccNC_navi.png">
+    </div>
+    <!-- map container -->
+    <div id="overflow-wrap" style=" width: 100%; height: 100%; overflow: hidden">
+      <div id="mapContainer">
+        <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"></svg>
+      </div>
+    </div>
+  </div>
+  <div style="position: absolute; top: 153px; left: 447px;">
+
+    <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" id="_레이어_2" data-name="레이어 2" viewBox="0 0 32 32">
+      <defs>
+        <style>
+          .cls-1 {
+            fill: #4f916c;
+          }
+    
+          .cls-2 {
+            fill: #fff;
+            stroke: #4f916c;
+            stroke-miterlimit: 10;
+          }
+        </style>
+      </defs>
+      <g id="_레이어_1-2" data-name="레이어 1">
+        <g>
+          <circle class="cls-2" cx="16" cy="16" r="15.5"/>
+          <polygon class="cls-1" points="22.85 22 16.26 19.11 10 22 16.26 8.68 22.85 22"/>
+        </g>
+      </g>
+    </svg>
+  </div>
+</body>
+
+<script type="module">
+  import { bngNavigator } from "/ui/ui-vue/src/services/navigator.js"
+  window.map = new bngNavigator({
+    container: "#mapContainer",
+    bootscreen: "#bootscreen",
+    clock: "#timeText",
+    backgroundRgb: [215, 208, 203],
+    roadColors: ["#A0918AFF", "#8E827CFF", "#776E69FF"],
+    offsetX: 468,
+    offsetY: 160,
+    pitch: 0,
+    speedPitch: 3,
+  });
+</script>
+
+</html>

@@ -1,0 +1,182 @@
+{
+"sv1ev3_chargingcap": {
+    "information":{
+        "authors":"Docroswagge",
+        "name":"Charging Cap",
+        "value":290,
+    },
+    "slotType" : "sv1ev3_chargingcap",
+    "flexbodies": [
+         ["mesh", "[group]:", "nonFlexMaterials"],
+         ["sv1ev3_chargingcap", ["sv1ev3_chargingcap"]],
+         ["sv1ev3_chargingcap_frame", ["sv1ev3_chargingcap"]],
+    ],
+    "sounds": {
+        "$+cabinFilterCoef": 0.03
+    }
+    "controller": [
+        ["fileName"],
+        ["advancedCouplerControl", {"name":"chargingcapCoupler"}],
+    ]
+    "chargingcapCoupler":{
+        "couplerNodes":[
+            ["cid1",    "cid2",     "autoCouplingStrength",    "autoCouplingRadius",   "autoCouplingLockRadius",   "autoCouplingSpeed", "couplingStartRadius",  "breakGroup"]
+            ["felat",     "cgc7",     35000,                     0.01,                   0.005,                      0.2,                 0.1,                   "chargingcap_latch"]
+        ]
+        "groupType": "autoCoupling",
+        "attachSoundVolume":1,
+        "detachSoundVolume":1,
+        "soundNode:":["cgc8"]
+        "attachSoundEvent": "event:>Vehicle>Latches>Special>beambox_open",
+        "detachSoundEvent": "event:>Vehicle>Latches>Hood>80s_01_open_lever",
+        "breakSoundEvent":""
+        "openForceMagnitude": 50,
+        "openForceDuration": 0.5,
+        "closeForceMagnitude": 180,
+        "closeForceDuration": 0.5
+    }
+    "triggers":[
+        ["id", "label", "idRef:", "idX:", "idY:", "type", "size", "baseRotation", "rotation", "translation", "baseTranslation"],
+        ["chargingcapLatch", "", "cgc3","cgc1","cgc4", "box", {"x":0.05, "y":0.02, "z":0.05}, {"x":0, "y":0, "z":0}, {"x":0, "y":0, "z":0}, {"x":0, "y":0, "z":0}, {"x":0.045, "y":0.0, "z":-0.01}],
+    ],
+    "triggerEventLinks":[
+        ["triggerId:triggers", "action", "targetEventId:events"],
+        ["chargingcapLatch", "action0", "chargingcapLatch"],
+    ],
+    "events":[
+        ["id", "title", "desc"],
+        ["chargingcapLatch", "ui.inputActions.sv1ev3.chargingcapLatch.title", "ui.inputActions.sv1ev3.chargingcapLatch.description", {"onUp":"controller.getControllerSafe('chargingcapCoupler').toggleGroup()"}],
+    ],
+    "nodes": [
+         ["id", "posX", "posY", "posZ"],
+         {"nodeMaterial":"|NM_METAL"},
+         {"frictionCoef":0.5},
+         //--FENDER--
+         {"collision":true},
+         {"selfCollision":true},
+         {"group":"sv1ev3_chargingcap"},
+         {"nodeWeight":0.9},
+         ["cgc1",-0.9007,-0.9001,0.9283],
+         ["cgc2",-0.9068,-1.1268,0.9263,{"selfCollision":false}],
+         ["cgc3",-0.9365,-0.9038,0.7392],
+         ["cgc4",-0.9426,-1.1314,0.7387,{"selfCollision":false}],
+         ["cgc7",-0.8904,-0.8346,0.8305],
+
+         //rigidifier
+         {"group":""},
+         {"collision":false},
+         {"selfCollision":false},
+         {"nodeWeight":0.9},
+         ["cgc8",-0.8201,-1.015,0.8153],
+
+          //latch       
+         ["cgc5",-0.8847,-1.1594,0.902],
+         ["cgc6",-0.9122,-1.1601,0.7575], 
+         ["felat",-0.8904,-0.8346,0.8305],
+         {"group":""},
+    ],
+    "beams": [
+          ["id1:", "id2:"],
+          //--FENDER--
+          {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+          {"beamSpring":101000,"beamDamp":10},
+          {"beamDeform":6050,"beamStrength":"FLT_MAX"},
+          //fender main shape
+          {"deformLimitExpansion":1.2},
+          ["cgc1","cgc3"],
+          ["cgc2","cgc4"],
+          ["cgc3","cgc4"],
+          ["cgc1","cgc2"],
+          ["cgc1","cgc4"],
+          ["cgc2","cgc3"],
+          ["cgc3","cgc7"],
+          ["cgc1","cgc7"],
+          ["cgc5","cgc6"],
+
+          //rig asdf idk
+          {"beamSpring":901000,"beamDamp":50},
+          {"beamDeform":20000,"beamStrength":62500},
+          ["cgc2","cgc8"],
+          ["cgc1","cgc8"],
+          ["cgc3","cgc8"],
+          ["cgc4","cgc8"],
+          ["cgc7","cgc8"],
+
+            //for fender
+          ["felat","fe3r"],
+          ["felat","fe6r"],
+          ["felat","fe7r"],
+          ["felat","fe4r"],
+          ["felat","fe2r"],
+
+          ["cgc5","fe8r"],
+          ["cgc5","fe5r"],
+          ["cgc5","fe7r"],
+          ["cgc5","fe9r"],
+
+
+          ["cgc6","fe4r"],
+          ["cgc6","fe5r"],
+          ["cgc6","fe11r"],
+          ["cgc6","fe2r"],
+
+
+          //gas struts
+          {"breakGroupType":1},
+          {"beamSpring":200,"beamDamp":250},
+          {"beamDeform":6000,"beamStrength":10000},
+          {"beamPrecompression":1.9},
+          ["f6rr", "cgc1", {"breakGroup":"chargingdoor_latch"}],
+          ["f5rr", "cgc3", {"breakGroup":"chargingdoor_latch"}],
+          {"beamPrecompression":1},
+          {"breakGroupType":0},
+          {"breakGroup":""},
+
+          //pop open
+          {"beamPrecompression":1.0,"beamSpring":50000,"beamDamp":1320,"beamDeform":40000,"beamStrength":10000,"breakGroupType":1,"beamType":"|SUPPORT", "beamLongBound":25},
+          ["felat", "cgc1", {"breakGroup":"chargingdoor_latch"}],
+          ["felat", "cgc3", {"breakGroup":"chargingdoor_latch"}],
+          {"beamPrecompression":1},
+          {"breakGroupType":0},
+
+          //hinge
+          {"beamPrecompression":1.0,"beamType":"|NORMAL", "beamLongBound":1, "beamShortBound":1},
+          {"beamSpring":901000,"beamDamp":50},
+          {"beamDeform":20000,"beamStrength":62500},
+          //upper
+          {"breakGroup":"chargingdoor_latch"},
+          ["cgc4","cgc5"],
+          ["cgc2","cgc5"],
+          ["cgc1","cgc5"],
+
+          ["cgc4","cgc6"],
+          ["cgc2","cgc6"],
+          ["cgc3","cgc6"],
+          {"breakGroup":""},
+
+          //tailgate support beams
+          {"beamType":"|SUPPORT", "beamLongBound":4},
+          {"beamSpring":901000,"beamDamp":70},
+          {"beamDeform":7000,"beamStrength":210000},
+          {"breakGroup":"chargingdoor_support"},
+          ["cgc6","f14rr"],
+          ["cgc6","f14r"],
+
+          ["cgc5","f14rr"],
+          ["cgc5","f14r"],
+
+          ["cgc1", "f6rr"],
+          ["cgc1", "f6rrr"],
+          ["cgc3", "f5rr"],
+          ["cgc3", "f1rr"],
+
+          ["cgc2", "f6rr"],
+          ["cgc4", "f1rr"],
+          ["cgc2", "f6rrr"],
+          ["cgc4", "f5rr"],
+          {"breakGroup":""},
+          {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+          {"deformLimitExpansion":1.2},
+    ],
+},
+}

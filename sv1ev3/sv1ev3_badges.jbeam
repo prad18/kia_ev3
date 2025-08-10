@@ -1,0 +1,51 @@
+{
+"sv1ev3_badge_F": {
+    "information":{
+        "authors":"BeamNG",
+        "name":"Front Badge",
+        "value":1350
+    },
+    "slotType" : "sv1ev3_badge_F",
+    "flexbodies": [
+      ["mesh", "[group]:", "nonFlexMaterials"],
+      ["sv1ev3_badge_F", ["sv1ev3_hood"]],
+    ],
+  },
+"sv1ev3_badge_R": {
+    "information":{
+        "authors":"BeamNG",
+        "name":"Rear Badge",
+        "value":1350
+    },
+    "slotType" : "sv1ev3_badge_R",
+    "flexbodies": [
+      ["mesh", "[group]:", "nonFlexMaterials"],
+      ["sv1ev3_badge_R", ["sv1ev3_tailgate"]],
+    ],
+  },
+  "sv1ev3_lettering": {
+      "information":{
+          "authors":"BeamNG",
+          "name":"EV3 Lettering",
+          "value":1350
+      },
+      "slotType" : "sv1ev3_lettering",
+      "flexbodies": [
+        ["mesh", "[group]:", "nonFlexMaterials"],
+        ["sv1ev3_lettering_R", ["sv1ev3_tailgate"]],
+      ],
+    },
+    "sv1ev3_lettering_gtline": {
+        "information":{
+            "authors":"BeamNG",
+            "name":"EV3 GT-line Lettering",
+            "value":1350
+        },
+        "slotType" : "sv1ev3_lettering",
+        "flexbodies": [
+          ["mesh", "[group]:", "nonFlexMaterials"],
+          ["sv1ev3_lettering_R", ["sv1ev3_tailgate"]],
+          ["sv1ev3_lettering_gtline", ["sv1ev3_tailgate"]],
+        ],
+    }
+}

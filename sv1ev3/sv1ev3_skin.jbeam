@@ -1,0 +1,98 @@
+{
+"sv1ev3_skin_interior": {
+    "information":{
+        "authors":"BeamNG",
+        "name":"Navy Interior",
+        "value":500,
+    },
+    "slotType" : "skin_interior",
+    "skinName" : "",
+},
+"sv1ev3_skin_interior_mediumgrey": {
+    "information":{
+        "authors":"BeamNG",
+        "name":"Medium Grey Interior",
+        "value":500,
+    },
+    "slotType" : "skin_interior",
+    "skinName" : "mediumgrey",
+},
+"sv1ev3_skin_interior_lightgrey": {
+    "information":{
+        "authors":"BeamNG",
+        "name":"Light Grey Interior",
+        "value":500,
+    },
+    "slotType" : "skin_interior",
+    "skinName" : "lightgrey",
+},
+"sv1ev3_skin_interior_charcoalwhite": {
+    "information":{
+        "authors":"BeamNG",
+        "name":"Charcoal & White Interior",
+        "value":500,
+    },
+    "slotType" : "skin_interior",
+    "skinName" : "charcoalwhite",
+    "flexbodies":[
+        ["mesh", "[group]:", "nonFlexMaterials"],
+        ["sv1ev3_seatpoint_gtline_FL", ["sv1ev3_seat_FL"]],
+        ["sv1ev3_seatpoint_gtline_FR", ["sv1ev3_seat_FR"]],
+        ["sv1ev3_seatpoint_gtline_R", ["sv1ev3_seats_R"]],
+    ],
+},
+"sv1ev3_skin_kakaot": {
+    "information":{
+        "authors":"BeamNG",
+        "name":"KakaoT Decal",
+        "value":500,
+    },
+    "slotType" : "paint_design",
+    "skinName" : "kakaot",
+},
+"sv1ev3_skin_secut": {
+    "information":{
+        "authors":"BeamNG",
+        "name":"SECU T Decal",
+        "value":500,
+    },
+    "slotType" : "paint_design",
+    "skinName" : "secut",
+},
+"sv1ev3_skin_seoultaxi": {
+    "information":{
+        "authors":"BeamNG",
+        "name":"Seoul Private Taxi Decal",
+        "value":500,
+    },
+    "slotType" : "paint_design",
+    "skinName" : "seoultaxi",
+},
+"sv1ev3_skin_ubertaxi": {
+    "information":{
+        "authors":"BeamNG",
+        "name":"Uber Taxi Decal",
+        "value":500,
+    },
+    "slotType" : "paint_design",
+    "skinName" : "ubertaxi",
+},
+"sv1ev3_skin_driexp": {
+    "information":{
+        "authors":"BeamNG",
+        "name":"Kia Driving Experience Sticker",
+        "value":500,
+    },
+    "slotType" : "paint_design",
+    "skinName" : "driexp",
+},
+"sv1ev3_skin_socar": {
+    "information":{
+        "authors":"BeamNG",
+        "name":"SOCAR Sticker",
+        "value":500,
+    },
+    "slotType" : "paint_design",
+    "skinName" : "socar",
+},
+}

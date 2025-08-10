@@ -1,0 +1,831 @@
+{
+  "sv1ev3_metal_interior.skin_interior.charcoalwhite": {
+    "name": "sv1ev3_metal_interior.skin_interior.charcoalwhite",
+    "mapTo": "sv1ev3_metal_interior.skin_interior.charcoalwhite",
+    "class": "Material",
+    "persistentId": "7d1cbea4-573a-4f06-ae1e-2fd08b93a2f0",
+    "Stages": [
+      {
+        "baseColorFactor": [
+          0.59,
+          0.59,
+          0.59,
+          1
+        ],
+        "metallicFactor": 1,
+        "roughnessFactor": 0.4
+      },
+      {
+        "baseColorFactor": null,
+        "metallicFactor": null,
+        "roughnessFactor": null
+      },
+      {
+        "baseColorFactor": null,
+        "metallicFactor": null,
+        "roughnessFactor": null
+      },
+      {
+        "baseColorFactor": null,
+        "metallicFactor": null,
+        "roughnessFactor": null
+      }
+    ],
+    "dynamicCubemap": true,
+    "materialTag0": "beamng",
+    "materialTag1": "vehicle",
+    "version": 1.5
+  },
+  "sv1ev3_aluminum_tip.skin_interior.charcoalwhite": {
+    "name": "sv1ev3_aluminum_tip.skin_interior.charcoalwhite",
+    "mapTo": "sv1ev3_aluminum_tip.skin_interior.charcoalwhite",
+    "class": "Material",
+    "persistentId": "7d1cbea4-573a-4f06-ae1e-2fd08b93a2f0",
+    "Stages": [
+      {
+        "baseColorFactor": [
+          0.76,
+          0.76,
+          0.76,
+          1
+        ],
+        "metallicFactor": 1,
+        "roughnessFactor": 0.7
+      },
+      {
+        "baseColorFactor": null,
+        "metallicFactor": null,
+        "roughnessFactor": null
+      },
+      {
+        "baseColorFactor": null,
+        "metallicFactor": null,
+        "roughnessFactor": null
+      },
+      {
+        "baseColorFactor": null,
+        "metallicFactor": null,
+        "roughnessFactor": null
+      }
+    ],
+    "dynamicCubemap": true,
+    "materialTag0": "beamng",
+    "materialTag1": "vehicle",
+    "version": 1.5
+  },
+  "sv1ev3_plastic_console.skin_interior.charcoalwhite": {
+    "name": "sv1ev3_plastic_console.skin_interior.charcoalwhite",
+    "mapTo": "sv1ev3_plastic_console.skin_interior.charcoalwhite",
+    "class": "Material",
+    "persistentId": "6b06c86b-030d-4343-81a2-0f6895ba31e1",
+    "Stages": [
+      {
+        "diffuseColor": [
+          0.35,
+          0.35,
+          0.35,
+          1
+        ],
+        "ambientOcclusionMap": "/vehicles/sv1ev3/sv1ev3_interior_ao.data.png",
+        "metallicFactor": 1,
+        "metallicMap": "vehicles/sv1ev3/sv1ev3_interior_m.data.png",
+        "normalMap": "/vehicles/sv1ev3/sv1ev3_plastic_nm.normal.png",
+        "opacityMap": "/vehicles/sv1ev3/sv1ev3_carpaint_c.data.png",
+        "pixelSpecular": true,
+        "roughnessFactor": 0.5,
+        "roughnessMap": "vehicles/sv1ev3/sv1ev3_interior_r.data.png"
+      },
+      {
+        "metallicFactor": null,
+        "pixelSpecular": null,
+        "roughnessFactor": null
+      },
+      {
+        "metallicFactor": null,
+        "pixelSpecular": null,
+        "roughnessFactor": null
+      },
+      {
+        "metallicFactor": null,
+        "pixelSpecular": null,
+        "roughnessFactor": null
+      }
+    ],
+    "alphaRef": 108,
+    "alphaTest": true,
+    "dynamicCubemap": true,
+    "materialTag0": "beamng",
+    "materialTag1": "vehicle",
+    "translucent": true,
+    "translucentBlendOp": "None",
+    "version": 1.5
+  },
+ "sv1ev3_dashboard_tip.skin_interior.charcoalwhite": {
+    "name": "sv1ev3_dashboard_tip.skin_interior.charcoalwhite",
+    "mapTo": "sv1ev3_dashboard_tip.skin_interior.charcoalwhite",
+    "class": "Material",
+    "persistentId": "6b06c86b-030d-4343-81a2-0f6895ba31e1",
+    "Stages": [
+      {
+        "diffuseColor": [
+          0.35,
+          0.35,
+          0.35,
+          1
+        ],
+        "ambientOcclusionMap": "/vehicles/sv1ev3/sv1ev3_interior_ao.data.png",
+        "metallicFactor": 1,
+        "metallicMap": "vehicles/sv1ev3/sv1ev3_interior_m.data.png",
+        "normalMap": "/vehicles/sv1ev3/sv1ev3_plastic_nm.normal.png",
+        "opacityMap": "/vehicles/sv1ev3/sv1ev3_carpaint_c.data.png",
+        "pixelSpecular": true,
+        "roughnessFactor": 0.5,
+        "roughnessMap": "vehicles/sv1ev3/sv1ev3_interior_r.data.png"
+      },
+      {
+        "metallicFactor": null,
+        "pixelSpecular": null,
+        "roughnessFactor": null
+      },
+      {
+        "metallicFactor": null,
+        "pixelSpecular": null,
+        "roughnessFactor": null
+      },
+      {
+        "metallicFactor": null,
+        "pixelSpecular": null,
+        "roughnessFactor": null
+      }
+    ],
+    "alphaRef": 108,
+    "alphaTest": true,
+    "dynamicCubemap": true,
+    "materialTag0": "beamng",
+    "materialTag1": "vehicle",
+    "translucent": true,
+    "translucentBlendOp": "None",
+    "version": 1.5
+  },
+  "sv1ev3_dashboard_console.skin_interior.charcoalwhite": {
+    "name": "sv1ev3_dashboard_console.skin_interior.charcoalwhite",
+    "mapTo": "sv1ev3_dashboard_console.skin_interior.charcoalwhite",
+    "class": "Material",
+    "persistentId": "6b06c86b-030d-4343-81a2-0f6895ba31e1",
+    "Stages": [
+      {
+        "diffuseColor": [
+          0.76,
+          0.76,
+          0.76,
+          1
+        ],
+        "ambientOcclusionMap": "/vehicles/sv1ev3/sv1ev3_interior_ao.data.png",
+        "metallicFactor": 1,
+        "metallicMap": "vehicles/sv1ev3/sv1ev3_interior_m.data.png",
+        "normalMap": "/vehicles/sv1ev3/sv1ev3_plastic_nm.normal.png",
+        "opacityMap": "/vehicles/sv1ev3/sv1ev3_carpaint_c.data.png",
+        "pixelSpecular": true,
+        "roughnessFactor": 0.5,
+        "roughnessMap": "vehicles/sv1ev3/sv1ev3_interior_r.data.png"
+      },
+      {
+        "metallicFactor": null,
+        "pixelSpecular": null,
+        "roughnessFactor": null
+      },
+      {
+        "metallicFactor": null,
+        "pixelSpecular": null,
+        "roughnessFactor": null
+      },
+      {
+        "metallicFactor": null,
+        "pixelSpecular": null,
+        "roughnessFactor": null
+      }
+    ],
+    "alphaRef": 108,
+    "alphaTest": true,
+    "dynamicCubemap": true,
+    "materialTag0": "beamng",
+    "materialTag1": "vehicle",
+    "translucent": true,
+    "translucentBlendOp": "None",
+    "version": 1.5
+  },
+  "sv1ev3_plastic_doorpanel.skin_interior.charcoalwhite": {
+    "name": "sv1ev3_plastic_doorpanel.skin_interior.charcoalwhite",
+    "mapTo": "sv1ev3_plastic_doorpanel.skin_interior.charcoalwhite",
+    "class": "Material",
+    "persistentId": "6b06c86b-030d-4343-81a2-0f6895ba31e1",
+    "Stages": [
+      {
+        "diffuseColor": [
+          0.76,
+          0.76,
+          0.76,
+          1
+        ],
+        "ambientOcclusionMap": "/vehicles/sv1ev3/sv1ev3_interior_ao.data.png",
+        "metallicFactor": 1,
+        "metallicMap": "vehicles/sv1ev3/sv1ev3_interior_m.data.png",
+        "normalMap": "/vehicles/sv1ev3/sv1ev3_plastic_nm.normal.png",
+        "opacityMap": "/vehicles/sv1ev3/sv1ev3_carpaint_c.data.png",
+        "pixelSpecular": true,
+        "roughnessFactor": 0.5,
+        "roughnessMap": "vehicles/sv1ev3/sv1ev3_interior_r.data.png"
+      },
+      {
+        "metallicFactor": null,
+        "pixelSpecular": null,
+        "roughnessFactor": null
+      },
+      {
+        "metallicFactor": null,
+        "pixelSpecular": null,
+        "roughnessFactor": null
+      },
+      {
+        "metallicFactor": null,
+        "pixelSpecular": null,
+        "roughnessFactor": null
+      }
+    ],
+    "alphaRef": 108,
+    "alphaTest": true,
+    "dynamicCubemap": true,
+    "materialTag0": "beamng",
+    "materialTag1": "vehicle",
+    "translucent": true,
+    "translucentBlendOp": "None",
+    "version": 1.5
+  },
+  "sv1ev3_dashboard_plastic_tip.skin_interior.charcoalwhite": {
+    "name": "sv1ev3_dashboard_plastic_tip.skin_interior.charcoalwhite",
+    "mapTo": "sv1ev3_dashboard_plastic_tip.skin_interior.charcoalwhite",
+    "class": "Material",
+    "persistentId": "6b06c86b-030d-4343-81a2-0f6895ba31e1",
+    "Stages": [
+      {
+        "diffuseColor": [
+          0.4,
+          0.4,
+          0.4,
+          1
+        ],
+        "ambientOcclusionMap": "/vehicles/sv1ev3/sv1ev3_interior_ao.data.png",
+        "metallicFactor": 1,
+        "metallicMap": "vehicles/sv1ev3/sv1ev3_interior_m.data.png",
+        "normalMap": "/vehicles/sv1ev3/sv1ev3_plastic_nm.normal.png",
+        "opacityMap": "/vehicles/sv1ev3/sv1ev3_carpaint_c.data.png",
+        "pixelSpecular": true,
+        "roughnessFactor": 0.5,
+        "roughnessMap": "vehicles/sv1ev3/sv1ev3_interior_r.data.png"
+      },
+      {
+        "metallicFactor": null,
+        "pixelSpecular": null,
+        "roughnessFactor": null
+      },
+      {
+        "metallicFactor": null,
+        "pixelSpecular": null,
+        "roughnessFactor": null
+      },
+      {
+        "metallicFactor": null,
+        "pixelSpecular": null,
+        "roughnessFactor": null
+      }
+    ],
+    "alphaRef": 108,
+    "alphaTest": true,
+    "dynamicCubemap": true,
+    "materialTag0": "beamng",
+    "materialTag1": "vehicle",
+    "translucent": true,
+    "translucentBlendOp": "None",
+    "version": 1.5
+  },
+  "sv1ev3_dotleather_seat_top.skin_interior.charcoalwhite": {
+    "name": "sv1ev3_dotleather_seat_top.skin_interior.charcoalwhite",
+    "mapTo": "sv1ev3_dotleather_seat_top.skin_interior.charcoalwhite",
+    "class": "Material",
+    "persistentId": "6b06c86b-030d-4343-81a2-0f6895ba31e1",
+    "Stages": [
+      {
+        "diffuseColor": [
+          0.76,
+          0.76,
+          0.76,
+          1
+        ],
+        "baseColorMap": "vehicles/sv1ev3/sv1ev3_dotleather_b.color.png",
+        "ambientOcclusionMap": "/vehicles/sv1ev3/sv1ev3_interior_ao.data.png",
+        "metallicFactor": 1,
+        "metallicMap": "vehicles/sv1ev3/sv1ev3_interior_m.data.png",
+        "normalMap": "/vehicles/sv1ev3/sv1ev3_dotleather_nm.normal.png",
+        "opacityMap": "/vehicles/sv1ev3/sv1ev3_carpaint_c.data.png",
+        "pixelSpecular": true,
+        "roughnessFactor": 0.5,
+        "roughnessMap": "vehicles/sv1ev3/sv1ev3_interior_r.data.png"
+      },
+      {
+        "metallicFactor": null,
+        "pixelSpecular": null,
+        "roughnessFactor": null
+      },
+      {
+        "metallicFactor": null,
+        "pixelSpecular": null,
+        "roughnessFactor": null
+      },
+      {
+        "metallicFactor": null,
+        "pixelSpecular": null,
+        "roughnessFactor": null
+      }
+    ],
+    "alphaRef": 108,
+    "alphaTest": true,
+    "dynamicCubemap": true,
+    "materialTag0": "beamng",
+    "materialTag1": "vehicle",
+    "translucent": true,
+    "translucentBlendOp": "None",
+    "version": 1.5
+  },
+  "sv1ev3_leather_seat_top.skin_interior.charcoalwhite": {
+    "name": "sv1ev3_leather_seat_top.skin_interior.charcoalwhite",
+    "mapTo": "sv1ev3_leather_seat_top.skin_interior.charcoalwhite",
+    "class": "Material",
+    "persistentId": "6b06c86b-030d-4343-81a2-0f6895ba31e1",
+    "Stages": [
+      {
+        "diffuseColor": [
+          0.76,
+          0.76,
+          0.76,
+          1
+        ],
+        "ambientOcclusionMap": "/vehicles/sv1ev3/sv1ev3_interior_ao.data.png",
+        "metallicFactor": 1,
+        "metallicMap": "vehicles/sv1ev3/sv1ev3_interior_m.data.png",
+        "normalMap": "/vehicles/sv1ev3/sv1ev3_leather_nm.normal.png",
+        "opacityMap": "/vehicles/sv1ev3/sv1ev3_carpaint_c.data.png",
+        "pixelSpecular": true,
+        "roughnessFactor": 0.5,
+        "roughnessMap": "vehicles/sv1ev3/sv1ev3_interior_r.data.png"
+      },
+      {
+        "metallicFactor": null,
+        "pixelSpecular": null,
+        "roughnessFactor": null
+      },
+      {
+        "metallicFactor": null,
+        "pixelSpecular": null,
+        "roughnessFactor": null
+      },
+      {
+        "metallicFactor": null,
+        "pixelSpecular": null,
+        "roughnessFactor": null
+      }
+    ],
+    "alphaRef": 108,
+    "alphaTest": true,
+    "dynamicCubemap": true,
+    "materialTag0": "beamng",
+    "materialTag1": "vehicle",
+    "translucent": true,
+    "translucentBlendOp": "None",
+    "version": 1.5
+  },
+  "sv1ev3_leather_seat_side.skin_interior.charcoalwhite": {
+    "name": "sv1ev3_leather_seat_side.skin_interior.charcoalwhite",
+    "mapTo": "sv1ev3_leather_seat_side.skin_interior.charcoalwhite",
+    "class": "Material",
+    "persistentId": "6b06c86b-030d-4343-81a2-0f6895ba31e1",
+    "Stages": [
+      {
+        "diffuseColor": [
+          0.76,
+          0.76,
+          0.76,
+          1
+        ],
+        "ambientOcclusionMap": "/vehicles/sv1ev3/sv1ev3_interior_ao.data.png",
+        "metallicFactor": 1,
+        "metallicMap": "vehicles/sv1ev3/sv1ev3_interior_m.data.png",
+        "normalMap": "/vehicles/sv1ev3/sv1ev3_leather_nm.normal.png",
+        "opacityMap": "/vehicles/sv1ev3/sv1ev3_carpaint_c.data.png",
+        "pixelSpecular": true,
+        "roughnessFactor": 0.5,
+        "roughnessMap": "vehicles/sv1ev3/sv1ev3_interior_r.data.png"
+      },
+      {
+        "metallicFactor": null,
+        "pixelSpecular": null,
+        "roughnessFactor": null
+      },
+      {
+        "metallicFactor": null,
+        "pixelSpecular": null,
+        "roughnessFactor": null
+      },
+      {
+        "metallicFactor": null,
+        "pixelSpecular": null,
+        "roughnessFactor": null
+      }
+    ],
+    "alphaRef": 108,
+    "alphaTest": true,
+    "dynamicCubemap": true,
+    "materialTag0": "beamng",
+    "materialTag1": "vehicle",
+    "translucent": true,
+    "translucentBlendOp": "None",
+    "version": 1.5
+  },
+  "sv1ev3_leather_seat_side_down.skin_interior.charcoalwhite": {
+    "name": "sv1ev3_leather_seat_side_down.skin_interior.charcoalwhite",
+    "mapTo": "sv1ev3_leather_seat_side_down.skin_interior.charcoalwhite",
+    "class": "Material",
+    "persistentId": "6b06c86b-030d-4343-81a2-0f6895ba31e1",
+    "Stages": [
+      {
+        "diffuseColor": [
+          0.35,
+          0.35,
+          0.35,
+          1
+        ],
+        "ambientOcclusionMap": "/vehicles/sv1ev3/sv1ev3_interior_ao.data.png",
+        "metallicFactor": 1,
+        "metallicMap": "vehicles/sv1ev3/sv1ev3_interior_m.data.png",
+        "normalMap": "/vehicles/sv1ev3/sv1ev3_leather_nm.normal.png",
+        "opacityMap": "/vehicles/sv1ev3/sv1ev3_carpaint_c.data.png",
+        "pixelSpecular": true,
+        "roughnessFactor": 0.5,
+        "roughnessMap": "vehicles/sv1ev3/sv1ev3_interior_r.data.png"
+      },
+      {
+        "metallicFactor": null,
+        "pixelSpecular": null,
+        "roughnessFactor": null
+      },
+      {
+        "metallicFactor": null,
+        "pixelSpecular": null,
+        "roughnessFactor": null
+      },
+      {
+        "metallicFactor": null,
+        "pixelSpecular": null,
+        "roughnessFactor": null
+      }
+    ],
+    "alphaRef": 108,
+    "alphaTest": true,
+    "dynamicCubemap": true,
+    "materialTag0": "beamng",
+    "materialTag1": "vehicle",
+    "translucent": true,
+    "translucentBlendOp": "None",
+    "version": 1.5
+  },
+  "sv1ev3_dotleather_seat_down.skin_interior.charcoalwhite": {
+    "name": "sv1ev3_dotleather_seat_down.skin_interior.charcoalwhite",
+    "mapTo": "sv1ev3_dotleather_seat_down.skin_interior.charcoalwhite",
+    "class": "Material",
+    "persistentId": "6b06c86b-030d-4343-81a2-0f6895ba31e1",
+    "Stages": [
+      {
+        "diffuseColor": [
+          0.35,
+          0.35,
+          0.35,
+          1
+        ],
+        "baseColorMap": "vehicles/sv1ev3/sv1ev3_dotleather_b.color.png",
+        "ambientOcclusionMap": "/vehicles/sv1ev3/sv1ev3_interior_ao.data.png",
+        "metallicFactor": 1,
+        "metallicMap": "vehicles/sv1ev3/sv1ev3_interior_m.data.png",
+        "normalMap": "/vehicles/sv1ev3/sv1ev3_dotleather_nm.normal.png",
+        "opacityMap": "/vehicles/sv1ev3/sv1ev3_carpaint_c.data.png",
+        "pixelSpecular": true,
+        "roughnessFactor": 0.5,
+        "roughnessMap": "vehicles/sv1ev3/sv1ev3_interior_r.data.png"
+      },
+      {
+        "metallicFactor": null,
+        "pixelSpecular": null,
+        "roughnessFactor": null
+      },
+      {
+        "metallicFactor": null,
+        "pixelSpecular": null,
+        "roughnessFactor": null
+      },
+      {
+        "metallicFactor": null,
+        "pixelSpecular": null,
+        "roughnessFactor": null
+      }
+    ],
+    "alphaRef": 108,
+    "alphaTest": true,
+    "dynamicCubemap": true,
+    "materialTag0": "beamng",
+    "materialTag1": "vehicle",
+    "translucent": true,
+    "translucentBlendOp": "None",
+    "version": 1.5
+  },
+  "sv1ev3_leather_seat_down.skin_interior.charcoalwhite": {
+    "name": "sv1ev3_leather_seat_down.skin_interior.charcoalwhite",
+    "mapTo": "sv1ev3_leather_seat_down.skin_interior.charcoalwhite",
+    "class": "Material",
+    "persistentId": "6b06c86b-030d-4343-81a2-0f6895ba31e1",
+    "Stages": [
+      {
+        "diffuseColor": [
+          0.76,
+          0.76,
+          0.76,
+          1
+        ],
+        "ambientOcclusionMap": "/vehicles/sv1ev3/sv1ev3_interior_ao.data.png",
+        "metallicFactor": 1,
+        "metallicMap": "vehicles/sv1ev3/sv1ev3_interior_m.data.png",
+        "normalMap": "/vehicles/sv1ev3/sv1ev3_leather_nm.normal.png",
+        "opacityMap": "/vehicles/sv1ev3/sv1ev3_carpaint_c.data.png",
+        "pixelSpecular": true,
+        "roughnessFactor": 0.5,
+        "roughnessMap": "vehicles/sv1ev3/sv1ev3_interior_r.data.png"
+      },
+      {
+        "metallicFactor": null,
+        "pixelSpecular": null,
+        "roughnessFactor": null
+      },
+      {
+        "metallicFactor": null,
+        "pixelSpecular": null,
+        "roughnessFactor": null
+      },
+      {
+        "metallicFactor": null,
+        "pixelSpecular": null,
+        "roughnessFactor": null
+      }
+    ],
+    "alphaRef": 108,
+    "alphaTest": true,
+    "dynamicCubemap": true,
+    "materialTag0": "beamng",
+    "materialTag1": "vehicle",
+    "translucent": true,
+    "translucentBlendOp": "None",
+    "version": 1.5
+  },
+  "sv1ev3_fabric_headsrest.skin_interior.charcoalwhite": {
+    "name": "sv1ev3_fabric_headsrest.skin_interior.charcoalwhite",
+    "mapTo": "sv1ev3_fabric_headsrest.skin_interior.charcoalwhite",
+    "class": "Material",
+    "persistentId": "6b06c86b-030d-4343-81a2-0f6895ba31e1",
+    "Stages": [
+      {
+        "diffuseColor": [
+          0.76,
+          0.76,
+          0.76,
+          1
+        ],
+        "ambientOcclusionMap": "/vehicles/sv1ev3/sv1ev3_interior_ao.data.png",
+        "metallicFactor": 1,
+        "metallicMap": "vehicles/sv1ev3/sv1ev3_interior_m.data.png",
+        "normalMap": "/vehicles/sv1ev3/sv1ev3_fabric_nm.normal.png",
+        "opacityMap": "/vehicles/sv1ev3/sv1ev3_carpaint_c.data.png",
+        "pixelSpecular": true,
+        "roughnessFactor": 0.5,
+        "roughnessMap": "vehicles/sv1ev3/sv1ev3_interior_r.data.png"
+      },
+      {
+        "metallicFactor": null,
+        "pixelSpecular": null,
+        "roughnessFactor": null
+      },
+      {
+        "metallicFactor": null,
+        "pixelSpecular": null,
+        "roughnessFactor": null
+      },
+      {
+        "metallicFactor": null,
+        "pixelSpecular": null,
+        "roughnessFactor": null
+      }
+    ],
+    "alphaRef": 108,
+    "alphaTest": true,
+    "dynamicCubemap": true,
+    "materialTag0": "beamng",
+    "materialTag1": "vehicle",
+    "translucent": true,
+    "translucentBlendOp": "None",
+    "version": 1.5
+  },
+  "sv1ev3_fabric_seat_rear.skin_interior.charcoalwhite": {
+    "name": "sv1ev3_fabric_seat_rear.skin_interior.charcoalwhite",
+    "mapTo": "sv1ev3_fabric_seat_rear.skin_interior.charcoalwhite",
+    "class": "Material",
+    "persistentId": "6b06c86b-030d-4343-81a2-0f6895ba31e1",
+    "Stages": [
+      {
+        "diffuseColor": [
+          0.35,
+          0.35,
+          0.35,
+          1
+        ],
+        "ambientOcclusionMap": "/vehicles/sv1ev3/sv1ev3_interior_ao.data.png",
+        "metallicFactor": 1,
+        "metallicMap": "vehicles/sv1ev3/sv1ev3_interior_m.data.png",
+        "normalMap": "/vehicles/sv1ev3/sv1ev3_fabric_nm.normal.png",
+        "opacityMap": "/vehicles/sv1ev3/sv1ev3_carpaint_c.data.png",
+        "pixelSpecular": true,
+        "roughnessFactor": 0.5,
+        "roughnessMap": "vehicles/sv1ev3/sv1ev3_interior_r.data.png"
+      },
+      {
+        "metallicFactor": null,
+        "pixelSpecular": null,
+        "roughnessFactor": null
+      },
+      {
+        "metallicFactor": null,
+        "pixelSpecular": null,
+        "roughnessFactor": null
+      },
+      {
+        "metallicFactor": null,
+        "pixelSpecular": null,
+        "roughnessFactor": null
+      }
+    ],
+    "alphaRef": 108,
+    "alphaTest": true,
+    "dynamicCubemap": true,
+    "materialTag0": "beamng",
+    "materialTag1": "vehicle",
+    "translucent": true,
+    "translucentBlendOp": "None",
+    "version": 1.5
+  },
+  "sv1ev3_seat_tip.skin_interior.charcoalwhite": {
+    "name": "sv1ev3_seat_tip.skin_interior.charcoalwhite",
+    "mapTo": "sv1ev3_seat_tip.skin_interior.charcoalwhite",
+    "class": "Material",
+    "persistentId": "6b06c86b-030d-4343-81a2-0f6895ba31e1",
+    "Stages": [
+      {
+        "diffuseColor": [
+          0.3,
+          0.3,
+          0.3,
+          1
+        ],
+        "ambientOcclusionMap": "/vehicles/sv1ev3/sv1ev3_interior_ao.data.png",
+        "metallicFactor": 1,
+        "metallicMap": "vehicles/sv1ev3/sv1ev3_interior_m.data.png",
+        "normalMap": "/vehicles/sv1ev3/sv1ev3_leather_nm.normal.png",
+        "opacityMap": "/vehicles/sv1ev3/sv1ev3_carpaint_c.data.png",
+        "pixelSpecular": true,
+        "roughnessFactor": 0.5,
+        "roughnessMap": "vehicles/sv1ev3/sv1ev3_interior_r.data.png"
+      },
+      {
+        "metallicFactor": null,
+        "pixelSpecular": null,
+        "roughnessFactor": null
+      },
+      {
+        "metallicFactor": null,
+        "pixelSpecular": null,
+        "roughnessFactor": null
+      },
+      {
+        "metallicFactor": null,
+        "pixelSpecular": null,
+        "roughnessFactor": null
+      }
+    ],
+    "alphaRef": 108,
+    "alphaTest": true,
+    "dynamicCubemap": true,
+    "materialTag0": "beamng",
+    "materialTag1": "vehicle",
+    "translucent": true,
+    "translucentBlendOp": "None",
+    "version": 1.5
+  },
+  "sv1ev3_fabric_dashboard.skin_interior.charcoalwhite": {
+    "name": "sv1ev3_fabric_dashboard.skin_interior.charcoalwhite",
+    "mapTo": "sv1ev3_fabric_dashboard.skin_interior.charcoalwhite",
+    "class": "Material",
+    "persistentId": "6b06c86b-030d-4343-81a2-0f6895ba31e1",
+    "Stages": [
+      {
+        "diffuseColor": [
+          0.35,
+          0.35,
+          0.35,
+          1
+        ],
+        "ambientOcclusionMap": "/vehicles/sv1ev3/sv1ev3_interior_ao.data.png",
+        "metallicFactor": 1,
+        "metallicMap": "vehicles/sv1ev3/sv1ev3_interior_m.data.png",
+        "normalMap": "/vehicles/sv1ev3/sv1ev3_fabric_nm.normal.png",
+        "opacityMap": "/vehicles/sv1ev3/sv1ev3_carpaint_c.data.png",
+        "pixelSpecular": true,
+        "roughnessFactor": 0.5,
+        "roughnessMap": "vehicles/sv1ev3/sv1ev3_interior_r.data.png"
+      },
+      {
+        "metallicFactor": null,
+        "pixelSpecular": null,
+        "roughnessFactor": null
+      },
+      {
+        "metallicFactor": null,
+        "pixelSpecular": null,
+        "roughnessFactor": null
+      },
+      {
+        "metallicFactor": null,
+        "pixelSpecular": null,
+        "roughnessFactor": null
+      }
+    ],
+    "alphaRef": 108,
+    "alphaTest": true,
+    "dynamicCubemap": true,
+    "materialTag0": "beamng",
+    "materialTag1": "vehicle",
+    "translucent": true,
+    "translucentBlendOp": "None",
+    "version": 1.5
+  },
+  "sv1ev3_fabric_doorpanel.skin_interior.charcoalwhite": {
+    "name": "sv1ev3_fabric_doorpanel.skin_interior.charcoalwhite",
+    "mapTo": "sv1ev3_fabric_doorpanel.skin_interior.charcoalwhite",
+    "class": "Material",
+    "persistentId": "6b06c86b-030d-4343-81a2-0f6895ba31e1",
+    "Stages": [
+      {
+        "diffuseColor": [
+          0.76,
+          0.76,
+          0.76,
+          1
+        ],
+        "ambientOcclusionMap": "/vehicles/sv1ev3/sv1ev3_interior_ao.data.png",
+        "metallicFactor": 1,
+        "metallicMap": "vehicles/sv1ev3/sv1ev3_interior_m.data.png",
+        "normalMap": "/vehicles/sv1ev3/sv1ev3_fabric_nm.normal.png",
+        "opacityMap": "/vehicles/sv1ev3/sv1ev3_carpaint_c.data.png",
+        "pixelSpecular": true,
+        "roughnessFactor": 0.5,
+        "roughnessMap": "vehicles/sv1ev3/sv1ev3_interior_r.data.png"
+      },
+      {
+        "metallicFactor": null,
+        "pixelSpecular": null,
+        "roughnessFactor": null
+      },
+      {
+        "metallicFactor": null,
+        "pixelSpecular": null,
+        "roughnessFactor": null
+      },
+      {
+        "metallicFactor": null,
+        "pixelSpecular": null,
+        "roughnessFactor": null
+      }
+    ],
+    "alphaRef": 108,
+    "alphaTest": true,
+    "dynamicCubemap": true,
+    "materialTag0": "beamng",
+    "materialTag1": "vehicle",
+    "translucent": true,
+    "translucentBlendOp": "None",
+    "version": 1.5
+
+   }
+}

@@ -1,0 +1,11 @@
+{
+    "license_plate_ev3plate": {
+    "information":{
+        "authors":"BeamNG",
+        "name":"EV3 Dealer Plate Design",
+        "value":50,
+    },
+    "slotType" : "licenseplate_design_2_1",
+    "licenseplate_path" : "vehicles/common/licenseplates/ev3plate/licenseplate-default.json",
+    },
+}

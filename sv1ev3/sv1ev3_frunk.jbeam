@@ -1,0 +1,120 @@
+{
+"sv1ev3_frunk": {
+    "information":{
+        "authors":"BeamNG",
+        "name":"Frunk Cover",
+        "value":190,
+    },
+    "slotType" : "sv1ev3_frunk",
+    "flexbodies": [
+         ["mesh", "[group]:", "nonFlexMaterials"],
+         ["sv1ev3_frunk", ["sv1ev3_frunk"]],
+
+         ["sv1ev3_hood_strut", ["sv1ev3_hood_strut"]],
+         ["sv1ev3_hood_strut_axle", ["sv1ev3_hood_strut"]],
+    ],
+    "nodes": [
+         ["id", "posX", "posY", "posZ"],
+         {"nodeMaterial":"|NM_METAL"},
+         {"frictionCoef":0.5},
+         //--HOOD--
+         {"collision":true},
+         {"selfCollision":true},
+         {"group":"sv1ev3_frunk"},
+         {"nodeWeight":0.5},
+         ["fru1l", 0.50, -1.84, 0.90],
+         ["fru2l", 0.55, -1.27, 1.03],
+
+         ["fru1", 0, -1.84, 0.90],
+         ["fru2", 0, -1.36, 1.03],
+
+         ["fru1r", -0.50, -1.84, 0.90],
+         ["fru2r", -0.55, -1.27, 1.03],
+
+         {"group":""},
+
+         //rigidifier
+         {"selfCollision":false},
+         {"collision":false},
+         {"group":""},
+         {"nodeWeight":1.5},
+         ["fru3",0.0, -1.53, 0.79],
+         {"group":""},
+    ],
+    "beams": [
+          ["id1:", "id2:"],
+          //--HOOD--
+          {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+          {"beamSpring":700600,"beamDamp":30},
+          {"beamDeform":11000,"beamStrength":"FLT_MAX"},
+          //hood main shape
+          {"deformLimitExpansion":1.2},
+          ["fru1","fru2"],
+          ["fru2l","fru2"],
+          ["fru1l","fru2l"],
+          ["fru1l","fru1"],
+          ["fru2l","fru1"],
+          ["fru1l","fru2"],
+          ["fru1","fru1r"],
+          ["fru1r","fru2r"],
+          ["fru2","fru2r"],
+          ["fru1","fru2r"],
+          ["fru2","fru1r"],
+          ["fru1","fru3"],
+          ["fru2","fru3"],
+          ["fru2l","fru3"],
+          ["fru1l","fru3"],
+          ["fru2r","fru3"],
+          ["fru1r","fru3"],
+
+          {"deformLimitExpansion":""},
+          {"beamSpring":501000,"beamDamp":20},
+          {"beamDeform":14000,"beamStrength":18000},
+          {"breakGroup":"frunk_l"},
+          ["fru2l", "f6l"],
+          ["fru2l", "f6ll"],
+          ["fru2l", "f14ll"],
+          ["fru1l", "f14ll"],
+          ["fru1l", "f15ll"],
+          ["fru1l", "f15l"],
+          {"breakGroup":""},
+
+          {"breakGroup":"frunk_m"},
+          ["fru1", "f15l"],
+          ["fru1", "f15"],
+          ["fru1", "f15r"],
+
+          ["fru2", "f6l"],
+          ["fru2", "f6r"],
+          {"breakGroup":""},
+
+          {"breakGroup":"frunk_r"},
+          ["fru2r", "f6r"],
+          ["fru2r", "f6lr"],
+          ["fru2r", "f14rr"],
+          ["fru1r", "f14rr"],
+          ["fru1r", "f15rr"],
+          ["fru1r", "f15r"],
+          {"breakGroup":""},
+
+          {"optional":false},
+          {"deformLimitExpansion":1.2},
+          {"disableMeshBreaking":false,"disableTriangleBreaking":false},
+
+    ],
+    "triangles": [
+        ["id1:","id2:","id3:"],
+        //hood
+        {"groundModel":"plastic"},
+        {"dragCoef":9},
+        {"group":"sv1ev3_frunk"},
+
+        ["fru1","fru2","fru2r"],
+        ["fru2l","fru2","fru1"],
+        ["fru1l","fru2l","fru1"],
+        ["fru1","fru2r","fru1r"],
+
+        {"group":""},
+    ],
+},
+}

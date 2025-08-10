@@ -1,0 +1,83 @@
+{
+    "sv1ev3_DSE": {
+        "information":{
+            "authors":"Diamondback",
+            "name":"Driving & Safety Electronics",
+            "value":250,
+        },
+        "slotType" : "sv1ev3_DSE",
+
+        "slots":[
+            ["type", "default", "description"],
+
+            ["sv1ev3_DSE_ESC","sv1ev3_DSE_ESC", "Stability Control"],
+            ["sv1ev3_DSE_TC","sv1ev3_DSE_TC_FWD", "Traction Control"],
+            ["sv1ev3_DSE_ABS","sv1ev3_DSE_ABS", "Anti-Lock Braking System"],
+            ["sv1ev3_DSE_drivemodes","sv1ev3_DSE_drivemodes_ICE", "Drive Modes"],
+        ]
+
+        "controller": [
+            ["fileName"],
+            ["drivingDynamics/CMU", {"name":"CMU", "debugSettings": {"peerIP": "127.0.0.1"}}]
+            ["drivingDynamics/sensors/sensorHub" ]
+            ["drivingDynamics/sensors/virtualSensors" {"name":"sensors"}]
+            ["drivingDynamics/sensors/vehicleData" {"name":"vehicleData"}]
+            ["drivingDynamics/supervisors/components/motorTorqueControl" {"name":"motorTorqueControl"}]
+            ["drivingDynamics/supervisors/components/brakeControl" {"name":"brakeControl"}]
+            ["adaptiveBrakeLights"],
+            ["postCrashBrake", {"brakeThreshold": 60}],
+            ["twoStepLaunch", {"rpmLimit":4500}],
+        ],
+
+        "vehicleData": {
+            "skewStiffnessFront": 153600,
+            "skewStiffnessRear": 131600
+        }
+    },
+    "sv1ev3_DSE_race": {
+        "information":{
+            "authors":"Diamondback",
+            "name":"Race Electronics",
+            "value":250,
+        },
+        "slotType" : "sv1ev3_DSE",
+
+        "slots":[
+            ["type", "default", "description"],
+
+            ["sv1ev3_DSE_ESC","sv1ev3_DSE_ESC", "Stability Control"],
+            ["sv1ev3_DSE_TC","sv1ev3_DSE_TC_FWD", "Traction Control"],
+            ["sv1ev3_DSE_ABS","sv1ev3_DSE_ABS", "Anti-Lock Braking System"],
+            //["sv1ev3_DSE_drivemodes","sv1ev3_DSE_drivemodes_ICE", "Drive Modes"],
+        ]
+
+        "controller": [
+            ["fileName"],
+            ["drivingDynamics/CMU", {"name":"CMU", "indicateUI":false, "debugSettings": {"peerIP": "127.0.0.1"}}]
+            ["drivingDynamics/sensors/sensorHub" ]
+            ["drivingDynamics/sensors/virtualSensors" {"name":"sensors"}]
+            ["drivingDynamics/sensors/vehicleData" {"name":"vehicleData"}]
+            ["driveModes"]
+        ],
+        "driveModes": {
+            "enabledModes":["brc"]
+            "defaultMode": "brc"
+            "modes": {
+                "brc": {
+                    "name": "BRC",
+                    "order": 10,
+                    "settings": [
+                        ["type"]
+                        ["transmission", {"defaultForwardMode": "S"}]
+                        ["controller", {"controllerName":"gauge", "modeName": "BRC", "modeColor": "#8F0101"}]
+                    ],
+                },
+            },
+        },
+
+        "vehicleData": {
+            "skewStiffnessFront": 153600,
+            "skewStiffnessRear": 131600
+        }
+    },
+}

@@ -1,0 +1,43 @@
+{
+"sv1ev3_doorsticker_RL": {
+    "information":{
+        "authors":"BeamNG",
+        "name":"Door Stickers",
+        "value":120,
+    },
+    "slotType" : "sv1ev3_doorsticker_RL",
+    "slots":[
+        ["type", "default", "description"],
+        ["sv1ev3_doorsticker_RL_energy","sv1ev3_doorsticker_RL_energy", "Energy consumption efficiency rating Sticker"],
+        ["sv1ev3_doorsticker_RL_barcode","sv1ev3_doorsticker_RL_barcode", "Barcode Label Sticker"],
+    ],
+},
+"sv1ev3_doorsticker_RL_energy": {
+    "information":{
+        "authors":"BeamNG",
+        "name":"Energy consumption efficiency rating Sticker",
+        "value":120,
+    },
+    "slotType" : "sv1ev3_doorsticker_RL_energy",
+    "flexbodies": [
+         ["mesh", "[group]:", "nonFlexMaterials"],
+         {"deformGroup":"doorglass_RL_break", "deformMaterialBase":"sv1ev3_sticker", "deformMaterialDamaged":"invis"},
+         ["sv1ev3_doorsticker_RL_energy", ["sv1ev3_door_RL"]],
+         {"deformGroup":""},
+    ],
+},
+"sv1ev3_doorsticker_RL_barcode": {
+    "information":{
+        "authors":"BeamNG",
+        "name":"Barcode Label Sticker",
+        "value":120,
+    },
+    "slotType" : "sv1ev3_doorsticker_RL_barcode",
+    "flexbodies": [
+         ["mesh", "[group]:", "nonFlexMaterials"],
+         {"deformGroup":"doorglass_RL_break", "deformMaterialBase":"sv1ev3_sticker", "deformMaterialDamaged":"invis"},
+         ["sv1ev3_doorsticker_RL_barcode", ["sv1ev3_door_RL"]],
+         {"deformGroup":""},
+    ],
+},
+}

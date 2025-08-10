@@ -1,0 +1,327 @@
+{
+    "sv1ev3_sunroof_frame": {
+    "information":{
+        "authors":"BeamNG",
+        "name":"Sunroof Frame",
+        "value":400,
+    },
+    "slotType" : "sv1ev3_sunroof_frame",
+    "slots": [
+        ["type", "default", "description"],
+        ["sv1ev3_sunroof_glass","sv1ev3_sunroof_glass", "Sunroof Glass"],
+    ],
+    "flexbodies": [
+         ["mesh", "[group]:", "nonFlexMaterials"],
+         ["sv1ev3_sunroof_frame", ["sv1ev3_sunroof"]],
+    ],
+    "triggers":[
+        ["id", "label", "idRef:", "idX:", "idY:", "type", "size", "baseRotation", "rotation", "translation", "baseTranslation"],
+        ["sunroof", "Sunroof", "rf1","rf1l","rf2", "box", {"x":0.025, "y":0.01, "z":0.015}, {"x":10, "y":-10, "z":0}, {"x":0, "y":0, "z":0}, {"x":0, "y":0, "z":0}, {"x":-0.01, "y":0.13, "z":0.09}],
+    ],
+    "triggerEventLinks":[
+        ["triggerId:triggers", "action", "targetEventId:events"],
+        ["sunroof", "action0", "sunroof"],
+    ],
+    "events":[
+        ["id", "title", "desc"],
+        ["sunroof", "", "", {"onUp":"electrics.values.sunroof = 1-(electrics.values.sunroof or 0)", "order": 2}]
+    ],
+    "rails": {
+        //door slider rails
+        "sunroofrail_FR":{"links:":["srfl1r", "srfl2r", "srfl3r"], "broken:":[], "looped":false, "capped":true},
+        "sunroofrail_FL":{"links:":["srfl1l", "srfl2l", "srfl3l"], "broken:":[], "looped":false, "capped":true},
+        "sunroofrail_RR":{"links:":["srrl1r", "srrl2r", "srrl3r"], "broken:":[], "looped":false, "capped":true},
+        "sunroofrail_RL":{"links:":["srrl1l", "srrl2l", "srrl3l"], "broken:":[], "looped":false, "capped":true},
+    },
+    "slidenodes": [
+        ["id:", "railName", "attached", "fixToRail", "tolerance", "spring", "strength", "capStrength"],
+        //door sliders
+        ["srpivf1l", "sunroofrail_FL", true, true, 0.0, 5001000, "FLT_MAX", "FLT_MAX"],
+        ["srpivf1r", "sunroofrail_FR", true, true, 0.0, 5001000, "FLT_MAX", "FLT_MAX"],
+        ["srpivr1l", "sunroofrail_RL", true, true, 0.0, 5001000, "FLT_MAX", "FLT_MAX"],
+        ["srpivr1r", "sunroofrail_RR", true, true, 0.0, 5001000, "FLT_MAX", "FLT_MAX"],
+    ],
+    "sounds": {
+        "$+cabinFilterCoef": -0.03
+    },
+    "nodes": [
+         ["id", "posX", "posY", "posZ"],
+         {"nodeMaterial":"|NM_METAL"},
+         {"frictionCoef":0.5},
+
+         //door rails
+         {"selfCollision":false},
+         {"collision":false},
+         {"nodeWeight":1.5},
+         //front rails
+
+         ["srfl1r", -0.5058,-0.187,1.520],
+         ["srfl2r", -0.5058,-0.094,1.551],
+         ["srfl3r", -0.5058,0.4069,1.549],
+
+         ["srfl1l", 0.5058,-0.187,1.520],
+         ["srfl2l", 0.5058,-0.094,1.551],
+         ["srfl3l", 0.5058,0.4069,1.549],
+
+         //rear rails
+
+         ["srrl1r", -0.5058,0.5831,1.4887],
+         ["srrl2r", -0.5058 0.631,1.514],
+         ["srrl3r", -0.5058,1.1832,1.5329],
+
+         ["srrl1l", 0.5058,0.5831,1.4887],
+         ["srrl2l", 0.5058 0.631,1.514],
+         ["srrl3l", 0.5058,1.1832,1.5329],
+         
+         //sunroof
+         {"collision":true},
+         {"selfCollision":true},
+         {"nodeWeight":0.7},
+         {"group":["sv1ev3_sunroof"]},
+         ["srb1r", -0.506,-0.223,1.590],
+         ["srb1", 0,-0.223,1.590,{"selfCollision":false}],
+         ["srb1l", 0.506,-0.223,1.590],
+
+         ["srb2r", -0.506,0.582,1.590],
+         ["srb2", 0,0.581,1.590,{"selfCollision":false}],
+         ["srb2l", 0.506,0.581,1.590],
+
+         //rigidifier
+         {"selfCollision":false},
+         {"collision":false},
+         {"nodeWeight":1.5},
+         ["srb3", -0.0000,0.193,1.415, {"group":""}],
+         {"group":""},
+
+         {"nodeWeight":1.0},
+         {"selfCollision":false},
+         {"collision":false},
+
+        //hydro
+        ["srhil", 0.5058,1.334,1.568],   
+        ["srhi", 0,1.334,1.568],   
+        ["srhir", -0.5058,1.334,1.568],      
+
+         {"group":"sliderpivot"},
+         {"selfCollision":false},
+         {"collision":false},
+         //front
+         ["srpivf1r",-0.5058,-0.187,1.520],
+         ["srpivf1l",0.5058,-0.187,1.520],
+
+         //rear
+         ["srpivr1r",-0.5058,0.5831,1.4887],
+         ["srpivr1l",0.5058,0.5831,1.4887],
+         {"group":""},
+    ],
+    "beams": [
+          ["id1:", "id2:"],
+          {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+
+          //doors slider rails
+          {"beamSpring":2001000,"beamDamp":100},
+          {"beamDeform":15000,"beamStrength":"FLT_MAX"},
+          {"deformLimitExpansion":1.1},
+          //rails
+          //front rails
+          ["srfl1r","srfl2r"],
+          ["srfl2r","srfl3r"],
+
+          ["srfl2l","srfl3l"],
+          ["srfl1l","srfl2l"],
+
+          //rear rails
+          ["srrl1r","srrl2r"],
+          ["srrl2r","srrl3r"],
+
+          ["srrl1l","srrl2l"],
+          ["srrl2l","srrl3l"],
+
+          {"beamSpring":701000,"beamDamp":40},
+          {"beamDeform":25000,"beamStrength":"FLT_MAX"},
+          //rear door main shape
+          {"deformLimitExpansion":1.1},
+          {"deformGroup":"sunroofglass_break", "deformationTriggerRatio":0.01},
+          ["srb1r","srb1"],
+          ["srb1r","srb2r"],
+          ["srb2r","srb2"],
+          ["srb1","srb2"],
+          ["srb1","srb1l"],
+          ["srb1l","srb2l"],
+          ["srb2","srb2l"],
+          ["srb1","srb2l"],
+          ["srb1l","srb2"],
+          ["srb1","srb2r"],
+          ["srb1r","srb2"],
+
+          {"beamSpring":301000,"beamDamp":20},
+          {"beamDeform":25000,"beamStrength":"FLT_MAX"},
+          ["srb1r","srb1l"],
+          ["srb2r","srb2l"],
+          {"deformGroup":""},
+
+
+          //rigidifier
+          {"beamSpring":701000,"beamDamp":40},
+          {"beamDeform":3000,"beamStrength":"FLT_MAX"},
+          ["srb1r","srb3"],
+          ["srb2r","srb3"],
+          ["srb2l","srb3"],
+          ["srb1l","srb3"],
+          ["srb1","srb3"],
+          ["srb2","srb3"],
+
+          {"deformGroup":""},
+        
+
+          //attach
+          {"beamSpring":901000,"beamDamp":60},
+          {"beamDeform":6500,"beamStrength":"FLT_MAX"},
+          {"breakGroup":""},
+          {"beamLongBound":3},
+            //front rail
+          ["srfl1l","rf1l"],
+          ["srfl1l","rf1"],
+          ["srfl1l","f2l"],
+          ["srfl1l","f7ll"],
+
+          ["srfl1r","rf1r"],
+          ["srfl1r","rf1"],
+          ["srfl1r","f2r"],
+          ["srfl1r","f7rr"],
+          
+          ["srfl2l","rf1l"],
+          ["srfl2l","rf1"],
+          ["srfl2l","f2l"],
+          ["srfl2l","f7ll"],
+
+          ["srfl2r","rf1r"],
+          ["srfl2r","rf1"],
+          ["srfl2r","f2r"],
+          ["srfl2r","f7rr"],
+
+          ["srfl3l","rf2l"],
+          ["srfl3l","rf2"],
+          ["srfl3l","f3l"],
+          ["srfl3l","f9ll"],
+
+          ["srfl3r","rf2r"],
+          ["srfl3r","rf2"],
+          ["srfl3r","f3r"],
+          ["srfl3r","f9rr"],
+
+          //rear rail
+          ["srrl1l","rf2l"],
+          ["srrl1l","f3l"],
+          ["srrl1l","f8ll"],
+
+          ["srrl1r","rf2r"],
+          ["srrl1r","f3r"],
+          ["srrl1r","f8rr"],
+
+          ["srrl2l","rf3l"],
+          ["srrl2l","f9l"],
+          ["srrl2l","f9ll"],
+
+          ["srrl2r","rf3r"],
+          ["srrl2r","f9r"],
+          ["srrl2r","f9rr"],
+
+          ["srrl3l","rf3l"],
+          ["srrl3l","f9l"],
+          ["srrl3l","f9ll"],
+
+          ["srrl3r","rf3r"],
+          ["srrl3r","f9r"],
+          ["srrl3r","f9rr"],
+
+
+
+          //hydro node support
+          ["srhil","rf3l"],
+          ["srhil","rf4l"],
+          ["srhil","rf3"],
+          ["srhil","rf4"],
+          ["srhil","f9l"],
+          ["srhil","r3ll"],
+
+          ["srhi","rf3"],
+          ["srhi","rf4"],
+          ["srhi","rf3l"],
+          ["srhi","rf4l"],
+          ["srhi","rf3r"],
+          ["srhi","rf4r"],
+          ["srhi","f9l"],
+          ["srhi","f9r"],
+
+          ["srhir","rf3r"],
+          ["srhir","rf4r"],
+          ["srhir","rf3"],
+          ["srhir","rf4"],
+          ["srhir","f9r"],
+          ["srhir","r3rr"],
+
+          //pivot front
+          {"breakGroup":"sunroofbreak_F"},
+          ["srb1l","srpivf1l"],
+          ["srb1","srpivf1l"],
+          ["srb1r","srpivf1l"],
+          ["srb2","srpivf1l"],
+          ["srb2l","srpivf1l"],
+
+          ["srb1r","srpivf1r"],
+          ["srb1","srpivf1r"],
+          ["srb1l","srpivf1r"],
+          ["srb2","srpivf1r"],
+          ["srb2r","srpivf1r"],
+          {"breakGroup":""},
+
+          //pivot rear
+          {"breakGroup":"sunroofbreak_R"},
+          ["srb1l","srpivr1l"],
+          ["srb2l","srpivr1l"],
+          ["srb2","srpivr1l"],
+          ["srb1r","srpivr1l"],
+
+          ["srb1r","srpivr1r"],
+          ["srb2r","srpivr1r"],
+          ["srb2","srpivr1r"],
+          ["srb1l","srpivr1r"],
+          {"breakGroup":""},
+
+          {"disableTriangleBreaking":false},
+          {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+          {"deformLimitExpansion":1.1},
+
+    ],
+    "triangles": [
+            ["id1:","id2:","id3:"],
+            //rear door
+            {"groundModel":"metal"},
+            {"group":"sv1ev3_sunroof"},
+            {"dragCoef":13},
+            ["srb1l","srb2l","srb2"],
+            ["srb1r","srb2","srb2r"],
+
+            ["srb1r","srb1","srb2"],
+            ["srb1","srb1l","srb2"],
+
+            {"triangleType":"NORMALTYPE"},
+            {"group":""},
+
+    ],
+    "hydros": [
+        ["id1:","id2:"],
+        {"beamDeform":55500,"beamStrength":145000},
+        {"beamSpring":1183050,"beamDamp":100},
+        {"breakGroupType":1},
+        {"breakGroup":["sunroof_break"]},
+        ["srb2l","srhil", {"inputSource":"sunroof","inLimit":0.4,"outLimit":1,"inRate":0.3,"outRate":0.3,"inputFactor":-1}],
+        ["srb2","srhi", {"inputSource":"sunroof","inLimit":0.4,"outLimit":1,"inRate":0.3,"outRate":0.3,"inputFactor":-1}],
+        ["srb2r","srhir", {"inputSource":"sunroof","inLimit":0.4,"outLimit":1,"inRate":0.3,"outRate":0.3,"inputFactor":-1}],
+
+        {"breakGroupType":0},
+        {"breakGroup":""},
+    ],
+},
+}

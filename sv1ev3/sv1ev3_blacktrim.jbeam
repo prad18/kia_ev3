@@ -1,0 +1,20 @@
+{
+"sv1ev3_blacktrim": {
+    "information":{
+        "authors":"BeamNG",
+        "name":"Matte Black Trim",
+        "value":1350
+    },
+    "slotType" : "sv1ev3_skin_blacktrim",
+    "globalSkin" : ""
+  },
+"sv1ev3_blacktrim_glossy": {
+    "information":{
+        "authors":"BeamNG",
+        "name":"Black High-Glossy Trim",
+        "value":1350
+    },
+    "slotType" : "sv1ev3_skin_blacktrim",
+    "globalSkin" : "glossyblack"
+  }
+}

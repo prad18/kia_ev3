@@ -1,0 +1,188 @@
+{
+
+    "sv1ev3_DSE_drivemodes_electricMotor": {
+        "information":{
+            "authors":"Diamondback",
+            "name":"Drive Modes (eMotor)",
+            "value":250,
+        },
+        "slotType" : "sv1ev3_DSE_drivemodes",
+
+        "controller": [
+            ["fileName"],
+            ["driveModes"]
+            ["AVAS"]
+        ],
+        "AVAS": {
+            "forwardSoundEvent":"event:>Engine>Pedestrian Warning>Version_02",
+            "reverseSoundEvent":"event:>Engine>Pedestrian Warning>Version_02",
+            "forwardSoundNode:":["f18"],
+            "reverseSoundNode:":["r2"],
+            "warningMaxSpeed": 14,
+            "warningVolume": 0.5
+        }
+
+        "driveModes": {
+            "enabledModes":["comfort", "sport", "off"]
+            "defaultMode": "comfort"
+            "defaultSettings": [
+                ["type"]
+
+                ["controller", {"controllerName":"adaptiveFrontDamper", "damperMode":"regular"}]
+                ["controller", {"controllerName":"adaptiveRearDamper", "damperMode":"regular"}]
+
+                ["controller", {"controllerName":"tractionControl", "isEnabled":true}]
+                ["controller", {"controllerName":"yawControl", "isEnabled":true}]
+                ["controller", {"controllerName":"motorTorqueControl", "tractionControl": "default", "yawControl": "default"}]
+                ["controller", {"controllerName":"brakeControl", "tractionControl": "default", "yawControl": "default"}]
+            ],
+            "modes": {
+                "comfort": {
+                    "name": "Comfort",
+                    "order": 10,
+                    "settings": [
+                        ["type"]
+                        ["controller", {"controllerName":"gauge", "modeName": "COMFORT", "modeColor": "#1e7ccc"}]
+                        ["simpleControlButton", {"buttonId":"dse", "uiName":"DSE","icon":"powertrain_esc","color":"238BE6", "offColor":"343434", "offColorElectric":"dseWarningPulse"}]
+                    ],
+                },
+                "sport": {
+                    "name": "Sport",
+                    "order": 20,
+                    "settings": [
+                        ["type"]
+                        ["controller", {"controllerName":"adaptiveFrontDamper", "damperMode":"hard"}]
+                        ["controller", {"controllerName":"adaptiveRearDamper", "damperMode":"hard"}]
+
+                        ["controller", {"controllerName":"motorTorqueControl",
+                            "tractionControl.isEnabled":true,
+                            "tractionControl.wheelGroupSettings.frontMotor.slipThreshold": 0.3,
+                            "tractionControl.wheelGroupSettings.rearMotor.slipThreshold": 0.3,
+                             "yawControl.isEnabled":true,
+                        }]
+                        ["controller", {"controllerName":"brakeControl",
+                            "tractionControl.isEnabled":true,
+                            "tractionControl.wheelGroupSettings.frontMotor.slipThreshold": 0.2,
+                            "tractionControl.wheelGroupSettings.rearMotor.slipThreshold": 0.2,
+                            "yawControl.isEnabled":true,
+                            "yawControl.slipAngleThreshold": 0.2,
+                            "yawControl.yawAvThreshold": 0.6
+                        }]
+
+                        ["controller", {"controllerName":"gauge", "modeName": "SPORT", "modeColor": "#8F0101"}]
+                        ["simpleControlButton", {"buttonId":"dse", "uiName":"DSE","icon":"powertrain_esc","color":"DA0C0C", "offColor":"343434", "offColorElectric":"dseWarningPulse"}]
+                    ],
+                },
+
+                "off": {
+                    "name": "ESC & TC Off",
+                    "order": 50,
+                    "settings": [
+                        ["type"]
+                        ["controller", {"controllerName":"adaptiveFrontDamper", "damperMode":"hard"}]
+                        ["controller", {"controllerName":"adaptiveRearDamper", "damperMode":"hard"}]
+
+                        ["controller", {"controllerName":"tractionControl", "isEnabled":false}]
+                        ["controller", {"controllerName":"yawControl", "isEnabled":false}]
+                        ["controller", {"controllerName":"motorTorqueControl"}]
+                        ["controller", {"controllerName":"brakeControl"}]
+
+                        ["controller", {"controllerName":"gauge", "modeName": "ESC OFF", "modeColor": "#343838"}]
+                        ["simpleControlButton", {"buttonId":"dse", "uiName":"DSE","icon":"powertrain_esc","color":"545454", "offColor":"343434", "offColorElectric":"dseWarningPulse"}]
+                    ],
+                }
+            },
+        },
+    },
+
+    "sv1ev3_DSE_drivemodes_arsenic": {
+        "information":{
+            "authors":"Diamondback",
+            "name":"Arsenic Mode",
+            "value":500,
+        },
+        "slotType" : "sv1ev3_DSE_drivemodes_arsenic",
+
+        "driveModes": {
+            "enabledModes_arsenic":["arsenic"]
+        }
+    },
+
+    "sv1ev3_DSE_drivemodes_offroad": {
+        "information":{
+            "authors":"Diamondback",
+            "name":"Offroad Mode",
+            "value":500,
+        },
+        "slotType" : "sv1ev3_DSE_drivemodes_offroad",
+
+        "driveModes": {
+            "enabledModes_offroad":["offroad"]
+        }
+    },
+
+    "sv1ev3_DSE_drivemodes_default_comfort": {
+        "information":{
+            "authors":"Diamondback",
+            "name":"Comfort Mode",
+            "value":500,
+        },
+        "slotType" : "sv1ev3_DSE_drivemodes_default",
+
+        "driveModes": {
+            "defaultMode":"comfort"
+        }
+    },
+
+    "sv1ev3_DSE_drivemodes_default_sport": {
+        "information":{
+            "authors":"Diamondback",
+            "name":"Sport Mode",
+            "value":500,
+        },
+        "slotType" : "sv1ev3_DSE_drivemodes_default",
+
+        "driveModes": {
+            "defaultMode":"sport"
+        }
+    },
+
+    "sv1ev3_DSE_drivemodes_default_arsenic": {
+        "information":{
+            "authors":"Diamondback",
+            "name":"Arsenic Mode",
+            "value":500,
+        },
+        "slotType" : "sv1ev3_DSE_drivemodes_default",
+
+        "driveModes": {
+            "defaultMode":"arsenic"
+        }
+    },
+
+    "sv1ev3_DSE_drivemodes_default_offroad": {
+        "information":{
+            "authors":"Diamondback",
+            "name":"Offroad Mode",
+            "value":500,
+        },
+        "slotType" : "sv1ev3_DSE_drivemodes_default",
+
+        "driveModes": {
+            "defaultMode":"offroad"
+        }
+    },
+
+    "sv1ev3_DSE_drivemodes_default_off": {
+        "information":{
+            "authors":"Diamondback",
+            "name":"ESC & TC Off Mode",
+            "value":500,
+        },
+        "slotType" : "sv1ev3_DSE_drivemodes_default",
+
+        "driveModes": {
+            "defaultMode":"off"
+        }
+    },
+}

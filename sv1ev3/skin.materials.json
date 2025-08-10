@@ -1,0 +1,236 @@
+{
+  "sv1ev3_exterior.skin.kakaot": {
+    "name": "sv1ev3_exterior.skin.kakaot",
+    "mapTo": "sv1ev3_exterior.skin.kakaot",
+    "class": "material",
+    "persistentId": "24a4e427-72e4-4c1b-b4fd-70d48250aec2",
+    "Stages": [
+      {
+        "baseColorMap": "/vehicles/sv1ev3/sv1ev3_carpaint_b.color.png",
+        "metallicFactor": 1,
+        "normalMap": "vehicles/sv1ev3/sv1ev3_carpaint_n.normal.png",
+        "roughnessFactor": 0,
+        "useAnisotropic": true
+      },
+      {
+        "baseColorMap": "vehicles/sv1ev3/sv1ev3_skin_kakaot_b.color.png",
+        "clearCoatFactor": 1,
+        "clearCoatMap": "/vehicles/sv1ev3/sv1ev3_carpaint_c.data.png",
+        "clearCoatRoughnessFactor": 0.03,
+        "colorPaletteMap": "vehicles/sv1ev3/sv1ev3_skin_kakaot_p.color.png",
+        "colorPaletteMapUseUV": 1,
+        "diffuseMapUseUV": 1,
+        "instanceDiffuse": true,
+        "metallicFactor": 1,
+        "metallicMap": "/vehicles/sv1ev3/sv1ev3_skin_kakaot_m.data.png",
+        "metallicMapUseUV": 1,
+        "normalMap": "vehicles/common/null_n.dds",
+        "opacityMap": "/vehicles/sv1ev3/sv1ev3_carpaint_c.data.png",
+        "useAnisotropic": true
+      },
+      {},
+      {}
+    ],
+    "activeLayers": 2,
+    "doubleSided": true,
+    "dynamicCubemap": true,
+    "materialTag0": "beamng",
+    "materialTag1": "vehicle",
+    "version": 1.5
+    },
+  "sv1ev3_exterior.skin.secut": {
+    "name": "sv1ev3_exterior.skin.secut",
+    "mapTo": "sv1ev3_exterior.skin.secut",
+    "class": "material",
+    "persistentId": "24a4e427-72e4-4c1b-b4fd-70d48250aec2",
+    "Stages": [
+      {
+        "baseColorMap": "/vehicles/sv1ev3/sv1ev3_carpaint_b.color.png",
+        "metallicFactor": 1,
+        "normalMap": "vehicles/sv1ev3/sv1ev3_carpaint_n.normal.png",
+        "roughnessFactor": 0,
+        "useAnisotropic": true
+      },
+      {
+        "baseColorMap": "vehicles/sv1ev3/sv1ev3_skin_secut_b.color.png",
+        "clearCoatFactor": 1,
+        "clearCoatMap": "/vehicles/sv1ev3/sv1ev3_carpaint_c.data.png",
+        "clearCoatRoughnessFactor": 0.03,
+        "colorPaletteMap": "vehicles/sv1ev3/sv1ev3_skin_secut_p.color.png",
+        "colorPaletteMapUseUV": 1,
+        "diffuseMapUseUV": 1,
+        "instanceDiffuse": true,
+        "metallicFactor": 1,
+        "metallicMap": "/vehicles/sv1ev3/sv1ev3_skin_secut_m.data.png",
+        "metallicMapUseUV": 1,
+        "normalMap": "vehicles/common/null_n.dds",
+        "opacityMap": "/vehicles/sv1ev3/sv1ev3_carpaint_c.data.png",
+        "useAnisotropic": true
+      },
+      {},
+      {}
+    ],
+    "activeLayers": 2,
+    "doubleSided": true,
+    "dynamicCubemap": true,
+    "materialTag0": "beamng",
+    "materialTag1": "vehicle",
+    "version": 1.5
+    },
+  "sv1ev3_exterior.skin.ubertaxi": {
+    "name": "sv1ev3_exterior.skin.ubertaxi",
+    "mapTo": "sv1ev3_exterior.skin.ubertaxi",
+    "class": "material",
+    "persistentId": "24a4e427-72e4-4c1b-b4fd-70d48250aec2",
+    "Stages": [
+      {
+        "baseColorMap": "/vehicles/sv1ev3/sv1ev3_carpaint_b.color.png",
+        "metallicFactor": 1,
+        "normalMap": "vehicles/sv1ev3/sv1ev3_carpaint_n.normal.png",
+        "roughnessFactor": 0,
+        "useAnisotropic": true
+      },
+      {
+        "baseColorMap": "vehicles/sv1ev3/sv1ev3_skin_ubertaxi_b.color.png",
+        "clearCoatFactor": 1,
+        "clearCoatMap": "/vehicles/sv1ev3/sv1ev3_carpaint_c.data.png",
+        "clearCoatRoughnessFactor": 0.03,
+        "colorPaletteMap": "vehicles/sv1ev3/sv1ev3_skin_ubertaxi_p.color.png",
+        "colorPaletteMapUseUV": 1,
+        "diffuseMapUseUV": 1,
+        "instanceDiffuse": true,
+        "metallicFactor": 1,
+        "metallicMap": "/vehicles/sv1ev3/sv1ev3_skin_ubertaxi_m.data.png",
+        "metallicMapUseUV": 1,
+        "normalMap": "vehicles/common/null_n.dds",
+        "opacityMap": "/vehicles/sv1ev3/sv1ev3_carpaint_c.data.png",
+        "useAnisotropic": true
+      },
+      {},
+      {}
+    ],
+    "activeLayers": 2,
+    "doubleSided": true,
+    "dynamicCubemap": true,
+    "materialTag0": "beamng",
+    "materialTag1": "vehicle",
+    "version": 1.5
+    },
+  "sv1ev3_exterior.skin.seoultaxi": {
+    "name": "sv1ev3_exterior.skin.seoultaxi",
+    "mapTo": "sv1ev3_exterior.skin.seoultaxi",
+    "class": "material",
+    "persistentId": "24a4e427-72e4-4c1b-b4fd-70d48250aec2",
+    "Stages": [
+      {
+        "baseColorMap": "/vehicles/sv1ev3/sv1ev3_carpaint_b.color.png",
+        "metallicFactor": 1,
+        "normalMap": "vehicles/sv1ev3/sv1ev3_carpaint_n.normal.png",
+        "roughnessFactor": 0,
+        "useAnisotropic": true
+      },
+      {
+        "baseColorMap": "vehicles/sv1ev3/sv1ev3_skin_seoultaxi_b.color.png",
+        "clearCoatFactor": 1,
+        "clearCoatMap": "/vehicles/sv1ev3/sv1ev3_carpaint_c.data.png",
+        "clearCoatRoughnessFactor": 0.03,
+        "colorPaletteMap": "vehicles/sv1ev3/sv1ev3_skin_seoultaxi_p.color.png",
+        "colorPaletteMapUseUV": 1,
+        "diffuseMapUseUV": 1,
+        "instanceDiffuse": true,
+        "metallicFactor": 1,
+        "metallicMap": "/vehicles/sv1ev3/sv1ev3_skin_seoultaxi_m.data.png",
+        "metallicMapUseUV": 1,
+        "normalMap": "vehicles/common/null_n.dds",
+        "opacityMap": "/vehicles/sv1ev3/sv1ev3_carpaint_c.data.png",
+        "useAnisotropic": true
+      },
+      {},
+      {}
+    ],
+    "activeLayers": 2,
+    "doubleSided": true,
+    "dynamicCubemap": true,
+    "materialTag0": "beamng",
+    "materialTag1": "vehicle",
+    "version": 1.5
+    },
+  "sv1ev3_exterior.skin.driexp": {
+    "name": "sv1ev3_exterior.skin.driexp",
+    "mapTo": "sv1ev3_exterior.skin.driexp",
+    "class": "material",
+    "persistentId": "24a4e427-72e4-4c1b-b4fd-70d48250aec2",
+    "Stages": [
+      {
+        "baseColorMap": "/vehicles/sv1ev3/sv1ev3_carpaint_b.color.png",
+        "metallicFactor": 1,
+        "normalMap": "vehicles/sv1ev3/sv1ev3_carpaint_n.normal.png",
+        "roughnessFactor": 0,
+        "useAnisotropic": true
+      },
+      {
+        "baseColorMap": "vehicles/sv1ev3/sv1ev3_skin_driexp_b.color.png",
+        "clearCoatFactor": 1,
+        "clearCoatMap": "/vehicles/sv1ev3/sv1ev3_carpaint_c.data.png",
+        "clearCoatRoughnessFactor": 0.03,
+        "colorPaletteMap": "vehicles/sv1ev3/sv1ev3_skin_driexp_p.color.png",
+        "colorPaletteMapUseUV": 1,
+        "diffuseMapUseUV": 1,
+        "instanceDiffuse": true,
+        "metallicFactor": 1,
+        "metallicMap": "/vehicles/sv1ev3/sv1ev3_skin_driexp_m.data.png",
+        "metallicMapUseUV": 1,
+        "normalMap": "vehicles/common/null_n.dds",
+        "opacityMap": "/vehicles/sv1ev3/sv1ev3_carpaint_c.data.png",
+        "useAnisotropic": true
+      },
+      {},
+      {}
+    ],
+    "activeLayers": 2,
+    "doubleSided": true,
+    "dynamicCubemap": true,
+    "materialTag0": "beamng",
+    "materialTag1": "vehicle",
+    "version": 1.5
+    },
+  "sv1ev3_exterior.skin.socar": {
+    "name": "sv1ev3_exterior.skin.socar",
+    "mapTo": "sv1ev3_exterior.skin.socar",
+    "class": "material",
+    "persistentId": "24a4e427-72e4-4c1b-b4fd-70d48250aec2",
+    "Stages": [
+      {
+        "baseColorMap": "/vehicles/sv1ev3/sv1ev3_carpaint_b.color.png",
+        "metallicFactor": 1,
+        "normalMap": "vehicles/sv1ev3/sv1ev3_carpaint_n.normal.png",
+        "roughnessFactor": 0,
+        "useAnisotropic": true
+      },
+      {
+        "baseColorMap": "vehicles/sv1ev3/sv1ev3_skin_socar_b.color.png",
+        "clearCoatFactor": 1,
+        "clearCoatMap": "/vehicles/sv1ev3/sv1ev3_carpaint_c.data.png",
+        "clearCoatRoughnessFactor": 0.03,
+        "colorPaletteMap": "vehicles/sv1ev3/sv1ev3_skin_socar_p.color.png",
+        "colorPaletteMapUseUV": 1,
+        "diffuseMapUseUV": 1,
+        "instanceDiffuse": true,
+        "metallicFactor": 1,
+        "metallicMap": "/vehicles/sv1ev3/sv1ev3_skin_socar_m.data.png",
+        "metallicMapUseUV": 1,
+        "normalMap": "vehicles/common/null_n.dds",
+        "opacityMap": "/vehicles/sv1ev3/sv1ev3_carpaint_c.data.png",
+        "useAnisotropic": true
+      },
+      {},
+      {}
+    ],
+    "activeLayers": 2,
+    "doubleSided": true,
+    "dynamicCubemap": true,
+    "materialTag0": "beamng",
+    "materialTag1": "vehicle",
+    "version": 1.5
+    }
+}

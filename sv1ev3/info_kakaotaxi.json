@@ -1,0 +1,27 @@
+{
+  "BoundingBox":[
+    [
+      -0.85,
+      -1.84,
+      -0.228
+    ],
+    [
+      1.17,
+      2.489,
+      1.217
+    ]
+  ],
+  "Config Type":"Service",
+  "Configuration":"Kakao Taxi [Seoul]",
+  "Description":"Long-range electric Taxi with Kakao Taxi Branding. You can meet by calling from the KakaoTaxi app and feel the god damn rapid acceleration of an electric car at a low price",
+  "Drivetrain":"FWD",
+  "Fuel Type":"Battery",
+  "Population":2000,
+  "Power":196,
+  "Propulsion":"Electric",
+  "Torque":345,
+  "Transmission":"Other",
+  "Value":41000,
+  "Weight":1850,
+  "defaultPaintName1":"Snow White Pearl"
+}

@@ -1,0 +1,111 @@
+@font-face {
+  font-family: RobotoBlack;
+  src: url(/ui/common/Roboto-Black.ttf);
+}
+
+body {
+  margin: 0;
+  padding-top: 0px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 10px;
+  overflow: hidden;
+  background-color: black;
+}
+
+img {
+  position: absolute;
+  height: 190px;
+  width: 500px;
+}
+
+.gauge {
+  width: 100%;
+}
+
+.center-screen {
+  width: 15%;
+  color: #E6E6E6;
+  font-size: 20px;
+  font-variant: narrow;
+  text-align: center;
+}
+
+.speed {
+  font-size: 40px;
+  position: absolute;
+  margin-top: 125px;
+  margin-left: 223px;
+}
+
+.speedUnit {
+  font-size: 20px;
+  visibility: hidden;
+}
+
+.odo {
+  font-size: 16px;
+  visibility: hidden;
+}
+
+.consumption {
+  width: 100%;
+  display: inline-block;
+  margin: 0 auto;
+  visibility: hidden;
+}
+
+.consumptionVal {
+  width: 50%;
+  font-size: 20px;
+  float: left;
+  visibility: hidden;
+}
+
+.consumptionUnit {
+  width: 0%;
+  font-size: 15px;
+  line-height: 30px;
+  float: left;
+  margin-left: 5px;
+}
+
+.right-screen {
+  width: 50%;
+  margin-top: -60px;
+}
+
+.gear-screen {
+  position: absolute;
+  right: 152px;
+  bottom: 65px;
+  border:2px solid #E6E6E6;
+  width: 40px;
+  height: 25px;
+  color: #E6E6E6;
+  font-weight:bold;
+  font-size:20px;
+  text-align: center;
+  line-height: 25px;
+}
+
+.efficiencyGauge {
+  position: relative;
+  margin-left: 53px;
+  margin-top: -325px;
+  transform: rotate(109deg);
+  transform-origin: 50%, 50%;
+}
+
+.efficiencyBar {
+  transform-origin: 50%, 50%;
+}
+
+.efficiency {
+  stroke-dasharray: 339.292;
+  stroke-dashoffset: -271;
+}

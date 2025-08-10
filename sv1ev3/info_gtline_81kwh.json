@@ -1,0 +1,27 @@
+{
+  "BoundingBox":[
+    [
+      -0.85,
+      -1.84,
+      -0.228
+    ],
+    [
+      1.17,
+      2.489,
+      1.217
+    ]
+  ],
+  "Config Type":"Factory",
+  "Configuration":"GT-line Long Range",
+  "Description":"Long-range electric SUV with 81kWh Battery, Provide Style options and Exclusive GT-line Bumper parts, 19-inch wheels, and more options",
+  "Drivetrain":"FWD",
+  "Fuel Type":"Battery",
+  "Population":8000,
+  "Power":204,
+  "Propulsion":"Electric",
+  "Torque":283,
+  "Transmission":"Other",
+  "Value":51080,
+  "Weight":1850,
+  "defaultPaintName1":"Aurora Black Pearl"
+}

@@ -1,0 +1,87 @@
+{
+"sv1ev3_licenseplate_F_EU": {
+    "information":{
+        "authors":"BeamNG",
+        "name":"Front EU License Plate",
+        "value":0,
+    },
+    "slotType" : "sv1ev3_licenseplate_F",
+    "slots": [
+        ["type", "default", "description"],
+        ["sv1ev3_numberplateletter_F","sv1ev3_numberplateletter_EV_F", "Front Plate Guard Letter"],
+    ],
+    "licenseplateFormat": "52-11",
+    "flexbodies": [
+         ["mesh", "[group]:", "nonFlexMaterials"],
+         ["sv1ev3_numberplate_F", ["sv1ev3_bumper_F"]],
+         ["sv1ev3_plateguard_F", ["sv1ev3_bumper_F"]],
+         ["licenseplate-52-11", ["sv1ev3_bumper_F"],[],{"pos":{"x":0.0, "y":-2.1543, "z":0.53084}, "rot":{"x":0, "y":0, "z":0}, "scale":{"x":1, "y":0.85, "z":1}}],
+    ],
+},
+"sv1ev3_licenseplate_R_EU": {
+    "information":{
+        "authors":"BeamNG",
+        "name":"Rear EU License Plate",
+        "value":0,
+    },
+    "slotType" : "sv1ev3_licenseplate_R",
+    "slots": [
+        ["type", "default", "description"],
+        ["sv1ev3_numberplateletter_R","sv1ev3_numberplateletter_EV_R", "Rear Plate Guard Letter"],
+    ],
+    "licenseplateFormat": "52-11",
+    "flexbodies": [
+         ["mesh", "[group]:", "nonFlexMaterials"],
+         ["sv1ev3_numberplate_R", ["sv1ev3_bumper_R"]],
+         ["licenseplate-52-11", ["sv1ev3_bumper_R"],[],{"pos":{"x":0.0, "y":2.1171, "z":0.51914}, "rot":{"x":16.34, "y":0, "z":180}, "scale":{"x":1, "y":1, "z":1}}],
+    ]
+},
+"sv1ev3_numberplateletter_EV_F": {
+    "information":{
+        "authors":"BeamNG",
+        "name":"Front EV Plate Guard Letter",
+        "value":0,
+    },
+    "slotType" : "sv1ev3_numberplateletter_F",
+    "flexbodies": [
+         ["mesh", "[group]:", "nonFlexMaterials"],
+         ["sv1ev3_numberplateletter_EV_F", ["sv1ev3_bumper_F"]],
+    ],
+},
+"sv1ev3_numberplateletter_EV_R": {
+    "information":{
+        "authors":"BeamNG",
+        "name":"Rear EV Plate Guard Letter",
+        "value":0,
+    },
+    "slotType" : "sv1ev3_numberplateletter_R",
+    "flexbodies": [
+         ["mesh", "[group]:", "nonFlexMaterials"],
+         ["sv1ev3_numberplateletter_EV_R", ["sv1ev3_bumper_R"]],
+    ],
+},
+"sv1ev3_numberplateletter_socar_F": {
+    "information":{
+        "authors":"BeamNG",
+        "name":"Front SOCAR Plate Guard Letter",
+        "value":0,
+    },
+    "slotType" : "sv1ev3_numberplateletter_F",
+    "flexbodies": [
+         ["mesh", "[group]:", "nonFlexMaterials"],
+         ["sv1ev3_numberplateletter_socar_F", ["sv1ev3_bumper_F"]],
+    ],
+},
+"sv1ev3_numberplateletter_socar_R": {
+    "information":{
+        "authors":"BeamNG",
+        "name":"Rear SOCAR Plate Guard Letter",
+        "value":0,
+    },
+    "slotType" : "sv1ev3_numberplateletter_R",
+    "flexbodies": [
+         ["mesh", "[group]:", "nonFlexMaterials"],
+         ["sv1ev3_numberplateletter_socar_R", ["sv1ev3_bumper_R"]],
+    ],
+}
+}

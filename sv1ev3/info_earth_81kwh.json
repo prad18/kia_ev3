@@ -1,0 +1,27 @@
+{
+  "BoundingBox":[
+    [
+      -0.85,
+      -1.84,
+      -0.228
+    ],
+    [
+      1.17,
+      2.489,
+      1.217
+    ]
+  ],
+  "Config Type":"Factory",
+  "Configuration":"Earth Long Range",
+  "Description":"Long-range electric SUV with 81kWh Battery, Provided Style option that include Small Cube Projection LED Headlights, LED Rear Combination Light, Center Light, Black High-Glossy Trim, Roof Rack, also Provides 19-inch Wheels",
+  "Drivetrain":"FWD",
+  "Fuel Type":"Battery",
+  "Population":8000,
+  "Power":204,
+  "Propulsion":"Electric",
+  "Torque":283,
+  "Transmission":"Other",
+  "Value":50130,
+  "Weight":1850,
+  "defaultPaintName1":"Aventurine Green"
+}

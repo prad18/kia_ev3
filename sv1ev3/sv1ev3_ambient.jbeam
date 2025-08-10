@@ -1,0 +1,18 @@
+{
+"sv1ev3_ambient": {
+    "information":{
+        "authors":"BeamNG",
+        "name":"Ambient Light",
+        "value":120,
+    },
+    "slotType" : "sv1ev3_ambient",
+    "flexbodies": [
+         ["mesh", "[group]:", "nonFlexMaterials"],
+         ["sv1ev3_ambient_dash", ["sv1ev3_dash"]],
+         ["sv1ev3_ambient_door_FL", ["sv1ev3_door_FL"]],
+         ["sv1ev3_ambient_door_FR", ["sv1ev3_door_FR"]],
+         ["sv1ev3_ambient_door_RL", ["sv1ev3_door_RL"]],
+         ["sv1ev3_ambient_door_RR", ["sv1ev3_door_RR"]],
+    ],
+},
+}

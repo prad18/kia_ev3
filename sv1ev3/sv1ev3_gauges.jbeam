@@ -1,0 +1,66 @@
+{
+"sv1ev3_gauges": {
+    "information":{
+        "authors":"BeamNG",
+        "name":"12.3 inch Supervision Cluster",
+        "value":200,
+    },
+    "slotType" : "sv1ev3_gauges",
+    "flexbodies": [
+            ["mesh", "[group]:", "nonFlexMaterials"],
+            {"deformGroup":"display_break", "deformMaterialBase":"sv1ev3_gauges_screen", "deformMaterialDamaged":"sv1ev3_black"},
+            ["sv1ev3_gauges", ["sv1ev3_dash", "sv1ev3_body"]],
+            {"deformGroup":""},
+    ],
+    "controller": [
+        ["fileName"],
+        ["gauges/genericGauges", {"name":"gauge", }],
+        ["gauges/customModules/environmentData"],
+        ["gauges/customModules/electricMotorData"],
+    ],
+
+    "gauge": {
+        "configuration": {
+            "materialName": "@sv1ev3_gauges_screen"
+            "htmlPath": "local://local/vehicles/sv1ev3/ccNC/clusterGauge.html"
+            "displayWidth":1280
+            "displayHeight":1050
+        }
+        "displayData": {
+            "electrics": [
+                "signal_L",
+                "signal_R",
+                "lights",
+                "highbeam",
+                "lowpressure",
+                "lowfuel",
+                "parkingbrake",
+                "checkengine",
+                "hazard",
+                "oil",
+                "cruiseControlActive",
+                "gear",
+                "rpmTacho",
+                "fuel",
+                "watertemp",
+                "engineRunning",
+                "wheelspeed",
+                "esc",
+                "escActive",
+                "tcs",
+                "tcsActive"
+                "fog",
+                "odometer",
+                "trip"
+                "ignitionLevel"
+            ]
+            "customModules": [
+                ["moduleName", "property"]
+                ["electricMotorData", "powerDisplay"],
+                ["environmentData", "temperatureEnv",]
+                ["environmentData", "time",]
+            ]
+        }
+    }
+},
+}

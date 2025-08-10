@@ -1,0 +1,27 @@
+{
+  "BoundingBox":[
+    [
+      -0.85,
+      -1.84,
+      -0.228
+    ],
+    [
+      1.17,
+      2.489,
+      1.217
+    ]
+  ],
+  "Config Type":"Service",
+  "Configuration":"GT-line Private Taxi [Seoul]",
+  "Description":"Long-range electric Taxi that operating in Seoul, with GT-line options",
+  "Drivetrain":"FWD",
+  "Fuel Type":"Battery",
+  "Population":1000,
+  "Power":204,
+  "Propulsion":"Electric",
+  "Torque":283,
+  "Transmission":"Other",
+  "Value":52010,
+  "Weight":1850,
+  "defaultPaintName1":"Snow White Pearl"
+}

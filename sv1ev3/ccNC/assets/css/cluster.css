@@ -1,0 +1,297 @@
+.Gauge_Container {
+  display: flex;
+  justify-content: space-between; /* 두 개의 게이지를 양 끝에 배치 */
+  align-items: center; /* 세로 정렬 중앙 */
+  width: 100vw; /* 뷰포트의 가로를 꽉 채움 */
+  max-width: 1200px; /* 필요에 따라 최대 크기 제한 */
+  margin-top: 110px;
+  /* margin: 0 auto; */
+  padding: 20px; /* 내부 간격 추가 */
+  box-sizing: border-box; /* 패딩 포함 */
+}
+
+
+.Gauge_Left {
+  position: relative; /* 기준점 설정 */
+  width: 312px; /* NormGauge-L의 크기와 동일 */
+  height: 272px; /* NormGauge-L의 크기와 동일 */
+}
+
+#NormGauge-L {
+  position: absolute; /* 컨테이너 내에서 절대 위치 */
+  top: 0;
+  left: 0;
+}
+
+#Gauge-Indicator-L {
+  position: absolute; /* NormGauge-L 외부로 이동 */
+  top: 30px; /* NormGauge-L 위쪽으로 이동 */
+  left: 120px; /* NormGauge-L의 가운데 정렬 (필요시 조정) */
+}
+
+.Gauge-Indicator-L-Speed {
+  position: absolute;
+  top: 45%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  font-family: 'hyundai-head';
+  color: #D1D1D1;
+  font-size: 49pt;
+}
+
+.Gauge-Indicator-L-Desc {
+  position: absolute;
+  top: 69%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  font-family: 'hyundai-head';
+  color: #959595;
+  font-size: 14pt;
+}
+
+.Gauge_Right {
+  position: relative; /* 기준점 설정 */
+  width: 312px; /* 왼쪽 게이지와 동일한 크기 */
+  height: 282px; /* 왼쪽 게이지와 동일한 크기 */
+  overflow: visible; /* 내부에서 튀어나온 요소를 숨김 */
+}
+
+#NormGauge-R {
+  position: absolute; /* 컨테이너 내부에서 절대 위치 */
+  bottom: 15px; /* 상단 위치 고정 */
+  right: 0; /* 컨테이너 내부에 정확히 맞춤 */
+}
+
+#NormGauge-Charge {
+  position: absolute; /* 컨테이너 내부에서 절대 위치 */
+  bottom: 0; /* 아래쪽으로 정확히 위치 */
+  right: 100px; /* `Gauge_Right` 중앙에 맞게 조정 */
+}
+
+.Gauge-Indicator-R-Charge {
+  margin-left: 12px;
+  font-family: 'hyundai-head';
+  color: #D1D1D1;
+  font-size: 34pt;
+}
+
+#Gauge-Indicator-R-ChargeIcon {
+  position: absolute;
+  top:47%;
+  left:46%;
+  transform: translate(-44%, -50%);
+}
+
+.Gauge-Indicator-R-Desc {
+  position: absolute;
+  top: 69%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  font-family: 'hyundai-head';
+  color: #959595;
+  font-size: 14pt;
+}
+
+.Gauge-Indicator-PowerDesc {
+  position: absolute;
+
+  left: 18px;
+  top: -28px;
+
+  font-family: 'hyundai-head';
+  color: #F9B628;
+  font-size: 15pt;
+}
+
+.Gauge-Indicator-ChargeDesc {
+  position: absolute;
+  margin-bottom: 12px;
+  bottom: 0;
+  left: 3%;
+
+  font-family: 'hyundai-head';
+  color: #2D4444;
+  font-size: 15pt;
+}
+
+#Gauge-Indicator-R {
+  position: absolute; /* 게이지 중심에 맞춤 */
+  top: 30px; /* 위쪽으로 약간 이동 */
+  right: 115px; /* 게이지와 정렬 */
+}
+
+
+.Gauge_Container_Bottom {
+  width: 100%;
+  height: 20px;
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.Gauge-Gear-Desc {
+  position: absolute;
+  margin-top: 3px;
+  right: 450px; /* 필요에 따라 조정 */
+  font-family: 'hyundai-head';
+  color: #fff;
+  font-size: 24pt;
+  font-weight: 500;
+  flex-shrink: 0; /* 크기가 줄어들지 않도록 설정 */
+}
+
+.Gauge-Drive-Ready-Desc {
+  position: absolute;
+  margin-top: 3px;
+  left: 375px; /* 필요에 따라 조정 */
+  font-family: 'hyundai-head';
+  color: #6EEA54;
+  font-size: 13pt;
+}
+
+.Temperature-Desc {
+  position: absolute;
+  margin-top: 3px;
+  left: 450px; /* 필요에 따라 조정 */
+  font-family: 'hyundai-head';
+  color: #fff;
+  font-size: 17pt;
+  flex-shrink: 0; /* 크기가 줄어들지 않도록 설정 */
+}
+
+.Temperature-C {
+  margin-left: 3px;
+  font-family: 'hyundai-head';
+  font-size: 13pt;
+  flex-shrink: 0; /* 크기가 줄어들지 않도록 설정 */
+}
+
+.Gauge_Battery {
+  position: absolute;
+  right: 215px; /* 필요에 따라 조정 */
+  display: flex;
+  align-items: center;
+}
+
+.Gauge_Battery_Status_Bar {
+  width: 45px;
+  height: 20px;
+  background: #3D3E3E;
+  border-radius: 1px;
+  overflow: hidden;
+  position: relative;
+  flex-shrink: 0; /* 크기가 줄어들지 않도록 설정 */
+}
+
+.Gauge_Battery_Status_Fill {
+  height: 100%;
+  background: #1A8F7D;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 50%; /* 배터리 잔량에 따라 동적으로 변경 */
+  transition: width 0.3s ease;
+}
+
+.Gauge_Battery_Status_Desc {
+  margin-left: 6px;
+  margin-top: 2px;
+  color: #fff;
+  font-family: 'hyundai-head';
+  font-size: 17pt;
+  flex-shrink: 0; /* 크기가 줄어들지 않도록 설정 */
+  width: 40px; /* 필요에 따라 조정하여 고정된 너비 설정 */
+}
+
+.Gauge_Battery_Status_Percent {
+  margin-left: 2px;
+  color: #9F9F9F;
+  font-family: 'Spoqa Han Sans Neo', sans-serif;
+  font-size: 12pt;
+  font-weight: lighter;
+  flex-shrink: 0; /* 크기가 줄어들지 않도록 설정 */
+}
+
+.OBO-Meter {
+  position: absolute;
+  margin-top: 3px;
+  right: 0;
+  font-family: 'hyundai-head';
+  color: #fff;
+  font-size: 17pt;
+}
+
+.OBO-Km {
+  font-family: 'Spoqa Han Sans Neo', sans-serif;
+  color: #D1D1D1;
+  font-size: 12pt;
+  font-weight: lighter;
+}
+
+
+/* Expermental */
+
+.Gauge_Center_Test {
+  position: relative;
+  margin-top: -120px;
+}
+
+.Gauge_Sub_DriveRange {
+  width: 55px;
+  height: 90px; /* 기존 높이 유지 */
+  left: 725px; /* 필요에 따라 조정 */
+  bottom: 80px;
+  border-radius: 5px; /* 기존 border-radius 유지 */
+  background-color: #11151D;
+  position: relative; /* 자식 요소의 절대 위치 지정을 위해 relative로 설정 */
+  display: flex;
+  flex-direction: column; /* 기본 요소 세로 정렬 */
+  justify-content: space-between; /* 요소들 간에 간격을 균일하게 배치 */
+  padding: 5px 5px; /* 내부 여백 설정 */
+
+  opacity: 0; /* 기본적으로 투명 */
+  transition: opacity 0.3s ease-in-out;
+}
+
+.Gauge_Sub_DriveRange.visible {
+  opacity: 1; /* Fully visible when the 'visible' class is applied */
+}
+
+.Gauge_Sub_DriveRange_D,
+.Gauge_Sub_DriveRange_N,
+.Gauge_Sub_DriveRange_R {
+  font-family: 'hyundai-head';
+  font-size: 17pt; /* 폰트 크기 줄이기 */
+  color: #83889D; /* 기본 텍스트 색상 */
+  align-self: flex-start; /* 왼쪽에 붙이기 위해 flex-start로 설정 */
+  margin-left: 5px; /* 왼쪽에 여백을 5px 추가 */
+}
+
+.Gauge_Sub_DriveRange span {
+  font-weight: normal; /* 기본값 */
+  color: #83889D; /* 기본값 */
+  transition: color 0.3s ease, font-weight 0.3s ease; /* 부드러운 전환 */
+}
+
+.Gauge_Sub_DriveRange span.active {
+  font-size: 19pt;
+  font-weight: bold;
+  color: white;
+}
+
+.Gauge_Sub_DriveRange_R.active {
+  color: red !important;
+}
+
+.Gauge_Sub_DriveRange_P {
+  font-family: 'hyundai-head';
+  font-size: 17pt; /* P의 폰트 크기를 다른 것들과 동일하게 설정 */
+  color: #83889D; /* 기본 텍스트 색상 */
+  position: absolute; /* 절대 위치 지정 */
+  right: 7px; /* 부모 요소의 오른쪽 경계에서 5px 안쪽으로 설정 */
+  top: 50%; /* 세로 중앙으로 배치 */
+  transform: translateY(-50%); /* 정확히 중앙에 맞추기 위해 transform 사용 */
+}

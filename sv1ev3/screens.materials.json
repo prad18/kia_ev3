@@ -1,0 +1,79 @@
+{
+  "sv1ev3_hud_screen": {
+    "name": "sv1ev3_hud_screen",
+    "mapTo": "sv1ev3_hud_screen",
+    "class": "Material",
+    "persistentId": "cef62e79-05fc-46dc-87fa-b87c17f5435f",
+    "Stages": [
+      {
+        "colorMap": "@sv1ev3_hud_screen",
+        "emissive": true,
+        "roughnessFactor": 0.607767701,
+        "specularMap": "vehicles/common/null.dds",
+        "useAnisotropic": true
+      },
+      {
+        "emissive": null,
+        "roughnessFactor": null,
+        "useAnisotropic": null
+      },
+      {
+        "emissive": null,
+        "roughnessFactor": null,
+        "useAnisotropic": null
+      },
+      {
+        "emissive": null,
+        "roughnessFactor": null,
+        "useAnisotropic": null
+      }
+    ],
+    "castShadows": false,
+    "materialTag0": "beamng",
+    "materialTag1": "vehicle",
+    "translucent": true,
+    "translucentBlendOp": "AddAlpha"
+  },
+  "sv1ev3_gauges_screen" : {
+    "name" : "sv1ev3_gauges_screen",
+    "class" : "Material",
+    "persistentId" : "cef62e79-05fc-46dc-87fa-b87c17f5435f",
+    "Stages" : [
+      {
+        "colorMap" : "@sv1ev3_gauges_screen",
+        "emissive" : true,
+        "specularMap" : "vehicles/common/null.dds",
+        "specularPower" : 32,
+        "useAnisotropic" : true
+      },
+      {},
+      {},
+      {}
+    ],
+    "castShadows" : false,
+    "mapTo" : "sv1ev3_gauges_screen",
+    "materialTag0" : "beamng",
+    "materialTag1" : "vehicle"
+  },
+  "sv1ev3_nav_screen" : {
+    "name" : "sv1ev3_nav_screen",
+    "class" : "Material",
+    "persistentId" : "cef62e79-05fc-46dc-87fa-b87c17f9635f",
+    "Stages" : [
+      {
+        "colorMap" : "@sv1ev3_nav_screen",
+        "emissive" : true,
+        "specularMap" : "vehicles/common/null.dds",
+        "specularPower" : 32,
+        "useAnisotropic" : true
+      },
+      {},
+      {},
+      {}
+    ],
+    "castShadows" : false,
+    "mapTo" : "sv1ev3_nav_screen",
+    "materialTag0" : "beamng",
+    "materialTag1" : "vehicle"
+  },
+}
